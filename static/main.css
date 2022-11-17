@@ -318,6 +318,13 @@ header h1 {
   overflow-x: scroll;
 }
 
+.challenges-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .challenge-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
