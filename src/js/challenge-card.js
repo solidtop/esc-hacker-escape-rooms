@@ -6,9 +6,9 @@ export function createChallengeCard(challenge) {
         buttonText = 'Take challenge online';
         typeTitle = '(online)';
     } else {
-        iconType = 'fa-sharp fa-solid fa-house'
+        iconType = 'fa-sharp fa-solid fa-house';
         buttonText = 'Book this room';
-        typeTitle = '(on-site)'
+        typeTitle = '(on-site)';
     }
 
     const item = document.createElement('li');
