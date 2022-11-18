@@ -23,7 +23,7 @@ challenges.forEach(challenge => {
 
 //-----------------------------------
 
-function createChallengeCard(challenge) {
+export function createChallengeCard(challenge) {
    
     let iconType, buttonText, typeTitle;
     if (challenge.type === 'online') {
