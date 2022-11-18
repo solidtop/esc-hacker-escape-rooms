@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/main.css" />
+    <title>[ESC] Our challenges</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Hacker Escape Rooms</h1>
+    </header>
+
+    <nav class="main-nav">
+      <button class="main-nav-toggle"></button>
+      <menu class="main-menu">
+        <li class="main-menu-item"><a href="">Play online</a></li>
+        <li class="main-menu-item"><a href="">Play on-site</a></li>
+        <li class="main-menu-item"><a href="">The story</a></li>
+        <li class="main-menu-item"><a href="">Contact us </a></li>
+      </menu>
+    </nav>
+
+    <h2>Our challenges</h2>
+    <section>
+      <button>Filter challenges</button>
+      <div class="filter-container">
+        <h3>Filter challenges</h3>
+        <button class="button-close">X</button>
+
+        <div class="filter-by-type">
+          <h4>By type</h4>
+          <input
+            type="checkbox"
+            name="online-challenge"
+            id="online-challenge"
+          />
+          <label for="online-challenge">Include online challenges</label>
+          <input
+            type="checkbox"
+            name="on-site-challenge"
+            id="on-site-challenge"
+          />
+          <label for="on-site-challenge">Include on-site challenges</label>
+        </div>
+
+        <div class="filter-by-rating">
+          <h4>By rating</h4>
+          <ul
+            role="meter"
+            class="rating"
+            aria-label="rating"
+            arial-valuemin="0"
+            aria-valuemax="5"
+          >
+            <li class="rating-star inactive"></li>
+            <li class="rating-star inactive"></li>
+            <li class="rating-star inactive"></li>
+            <li class="rating-star inactive"></li>
+            <li class="rating-star inactive"></li>
+          </ul>
+          <label for="rating-star">to</label>
+          <ul
+            role="meter"
+            class="rating"
+            aria-label="rating"
+            arial-valuemin="0"
+            aria-valuemax="5"
+          >
+            <li class="rating-star active"></li>
+            <li class="rating-star active"></li>
+            <li class="rating-star active"></li>
+            <li class="rating-star active"></li>
+            <li class="rating-star active"></li>
+          </ul>
+        </div>
+
+        <div class="filter-by-tags">
+          <h4>By tags</h4>
+          <ul>
+            <li>Web</li>
+            <li>Linux</li>
+            <li>Cryptography</li>
+            <li>Coding</li>
+            <li>Web</li>
+            <li>Web</li>
+          </ul>
+        </div>
+
+        <div class="filter-by-search">
+          <h4>Or type to search for keyword</h4>
+          <input type="text" placeholder="Start typing to filter" />
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-cards"></section>
+
+    <footer>
+      <div class="footer-summary">
+        <h2>[Esc] Hacker Escape Rooms</h2>
+        <p>
+          Quodsi haberent magnalia inter potentiam et divitias, et non illam
+          quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+          felicitatis libertatisque perficiuntur.
+        </p>
+      </div>
+      <nav class="footer-sitemap">
+        <h2>Site map</h2>
+        <menu>
+          <li class="misc-link"><a href="">The Story</a></li>
+          <li class="misc-link"><a href="">Contact Us</a></li>
+          <li class="misc-link"><a href="">Legal</a></li>
+          <li class="play-link"><a href="">Play online</a></li>
+          <li class="play-link"><a href="">Play on-site</a></li>
+        </menu>
+      </nav>
+      <nav class="footer-social">
+        <h2>Follow us on</h2>
+        <menu>
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Instagram</a></li>
+          <li><a href="">Twitter</a></li>
+        </menu>
+      </nav>
+    </footer>
+    <script></script>
+  </body>
+</html>
