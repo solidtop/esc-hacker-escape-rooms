@@ -15,6 +15,10 @@ export function createChallengeCard(challenge) {
     item.classList.add('challenge-item');
     document.querySelector('.challenge-cards').appendChild(item);
 
+    const icon = document.createElement('i');
+    icon.innerHTML = `<i class="${iconType}"></i>`;
+    item.appendChild(icon);
+
     const image = document.createElement('img');
     image.classList.add('challenge-image');
     image.setAttribute('src', challenge.image);
@@ -36,20 +40,14 @@ export function createChallengeCard(challenge) {
     rating.setAttribute("aria-valuetext", challenge.rating + ' out of 5');
     item.appendChild(rating);
 
-    const stars = [
-        document.createElement('li'), 
-        document.createElement('li'),
-        document.createElement('li'),
-        document.createElement('li'),
-        document.createElement('li'),
-    ];
-    stars.forEach((star, i) => {
+    for (let i = 0; i < 5; i++) {
+        let star = document.createElement('li');
         star.classList.add('rating-star');
         if (i < challenge.rating) 
             star.classList.add('active');
         
         rating.appendChild(star);
-    });
+    }
 
     const participants = document.createElement('small');
     participants.classList.add('challenge-meta');
@@ -68,3 +66,6 @@ export function createChallengeCard(challenge) {
 
     return item;
 }
+
+
+
