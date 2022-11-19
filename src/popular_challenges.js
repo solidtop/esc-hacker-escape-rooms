@@ -25,7 +25,7 @@ function createChallengeCard(challenge) {
     img.setAttribute("alt", "Image of challenge");
     img.setAttribute("src", challenge["image"]);
     let icon = document.createElement("img");
-    challenge["type"] = "online" ? icon.setAttribute("src", "static/computer.png") : icon.setAttribute("src", "static/home_icon.png");
+    challenge["type"] === "online" ? icon.setAttribute("src", "static/computer.png") : icon.setAttribute("src", "static/home_icon.png");
     icon.classList.add("challenge-image-icon");
     li.append(icon);
     li.append(img);
