@@ -6,7 +6,6 @@ async function fetchChallenges(){
     data.forEach((challenge)=> {
         createChallengeCard(challenge);
     });
-    console.log(data)
     return data;
 }
 
@@ -46,7 +45,6 @@ function createChallengeCard(challenge) {
 
     //unsure how to deal with decimal numbers
     let ratingCounter = Math.ceil(challenge["rating"]);
-    console.log(ratingCounter)
     for(let i = 0; i < 5; i++) {
         const star = document.createElement("li");
         if(ratingCounter > 0) {
@@ -74,6 +72,5 @@ function createChallengeCard(challenge) {
 
     challengeParent.append(li);
 }
-
 
 fetchChallenges();
