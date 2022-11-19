@@ -43,7 +43,7 @@ export function createChallengeCard(challenge) {
     for (let i = 0; i < 5; i++) {
         let star = document.createElement('li');
         star.classList.add('rating-star');
-        if (i < challenge.rating) 
+        if (i < Math.floor(challenge.rating)) 
             star.classList.add('active');
         
         rating.appendChild(star);
