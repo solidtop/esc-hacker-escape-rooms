@@ -1,19 +1,11 @@
+import loadData from "./js/loadData.js";
+import filterText from "./js/filterText";
 
-import loadData from './js/loadData.js';
-import render from './js/renderChallenges.js';
-import filterText from './js/filterText';
+(async () => {
+  let challangesArray = await loadData();
 
-
- 
-
- (async () => {
-    console.log(await loadData());
-    let challangesArray = await loadData();
-    
-    render(challangesArray);
-    
-    let inputvalue = document.querySelector('#letters').value;
-    document.querySelector('#letters').addEventListener('keydown', filterText(inputvalue, challangesArray));
-
-  })();
-
+  document.getElementById("text-filter").addEventListener("keyup", () => {
+    const newArray = filterText(challangesArray);
+    console.log(newArray);
+  });
+})();
