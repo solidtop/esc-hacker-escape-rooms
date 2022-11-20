@@ -13,7 +13,7 @@ export function createChallengeCard(challenge) {
 
     const item = document.createElement('li');
     item.classList.add('challenge-item');
-    document.querySelector('.challenge-cards').appendChild(item);
+    document.querySelector('.challenge-list').appendChild(item);
 
     const icon = document.createElement('i');
     icon.innerHTML = `<i class="${iconType}"></i>`;
