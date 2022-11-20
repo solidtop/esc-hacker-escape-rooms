@@ -1,27 +1,32 @@
-import { createChallengeCard } from "./challenge-card.js";
-
 const checkboxes = document.querySelectorAll('.filter-by-type input[type=checkbox]');
 checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', toggleCheckbox);    
+    checkbox.addEventListener('change', () => {
+        
+        let types = [];
+        const checked = document.querySelectorAll('.filter-by-type input[type=checkbox]:checked');
+        checked.forEach(item => {
+            types.push(item.value);
+        });
+
+        const filteredArray = filterByType(challenges, types);
+        updateCards(filteredArray);
+    });    
 });
 
-function toggleCheckbox() {
+function filterByType(data, types) {
+    return data.filter(item => types.some(type => item.type.includes(type)));
+}
 
-    let filters = [];
-    const checked = document.querySelectorAll('.filter-by-type input[type=checkbox]:checked');
-    checked.forEach(item => {
-        filters.push(item.value);
+function updateCards(data) {
+
+    document.querySelector('.challenge-list').remove(); //Remove existing cards
+
+    //Add new cards
+    const list = document.createElement('ul');
+    list.classList.add('challenge-list');
+    document.body.appendChild(list);
+
+    data.forEach(item => {
+        createChallengeCard(item);
     });
-
-    const filteredArray = filterByType(challenges, filters);
-    console.log(filteredArray);
-    
-    //TODO: Update Challenge-cards display here
 }
-
-function filterByType(data, filters) {
-    return data.filter(item => filters.some(filter => item.type.includes(filter)));
-}
-
-
-
