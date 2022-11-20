@@ -46,7 +46,7 @@ function createChallengeCard(challenge) {
     li.append(ul);
 
     //unsure how to deal with decimal numbers
-    let ratingCounter = Math.ceil(challenge["rating"]);
+    let ratingCounter = Math.floor(challenge["rating"]);
     for(let i = 0; i < 5; i++) {
         const star = document.createElement("li");
         if(ratingCounter > 0) {
