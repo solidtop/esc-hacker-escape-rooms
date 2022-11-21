@@ -1,7 +1,11 @@
+import loadData from './loadData.js';
+
 async function fetchChallenges(){
-    let data = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
-    data = await data.json();
-    data = data["challenges"];
+    // let data = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
+    // data = await data.json();
+    // data = data["challenges"];
+    let data = await loadData();
+    console.log(data)
     data = filterPopularChallenges(data)
     data.forEach((challenge)=> {
         createChallengeCard(challenge);
