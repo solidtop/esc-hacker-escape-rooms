@@ -5,7 +5,6 @@ async function fetchChallenges(){
     // data = await data.json();
     // data = data["challenges"];
     let data = await loadData();
-    console.log(data)
     data = filterPopularChallenges(data)
     data.forEach((challenge)=> {
         createChallengeCard(challenge);

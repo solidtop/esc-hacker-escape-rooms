@@ -2,7 +2,6 @@ function getQueryParams() {
   const params = window.location.search;
   const paramSearch = new URLSearchParams(params);
   const type = paramSearch.get("type");
-  console.log(type)
 
   //Call function to get API data
   
