@@ -1,0 +1,38 @@
+
+/*Test css*/
+
+
+.box{
+    background-color:#fff;
+    color: rgb(30, 93, 189);
+    width: 400px;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+    display:none;
+}
+.show{
+    display: inline-block;
+}
+
+.btn{
+    background-color: rgb(255, 255, 255);
+    color: rgb(83, 83, 83);
+    border: 3px solid rgb(182, 192, 196);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(120, 126, 134);
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn.active {
+    background-color: rgb(67, 75, 82);
+    color: white;
+  }
+  .btn:hover {
+    background-color: rgb(56, 58, 66);
+    color: white;
+  }
