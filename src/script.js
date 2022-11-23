@@ -5,7 +5,6 @@ import filterText from "./js/filterText";
   let challangesArray = await loadData();
 
   document.getElementById("text-filter").addEventListener("keyup", () => {
-    const newArray = filterText(challangesArray);
-    console.log(newArray);
+    return filterText(challangesArray)
   });
 })();

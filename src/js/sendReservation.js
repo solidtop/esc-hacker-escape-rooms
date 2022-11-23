@@ -1,18 +1,4 @@
-async function loadTimes() {
-    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=2022-12-12&challenge=3');
-    const data = await res.json();
-    data.slots.forEach(slot => {
-        console.log(slot)
-    });
-};
-
-
-
-function getInfo() {
-
-}
-
-async function reserveTime() {
+export default async function reserveTime(availableTimes) {
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
     method: 'POST',
     headers: {
@@ -31,10 +17,3 @@ async function reserveTime() {
 const data = await res.json();
 console.log(data);
 }
-
-
-function skapaModal() {
-    
-}
-
-
