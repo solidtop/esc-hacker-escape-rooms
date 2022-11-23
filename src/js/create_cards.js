@@ -1,6 +1,6 @@
-export default function createChallengeCard(challenges) {
+export default function createChallengeCard(challenges, parent) {
     challenges.forEach((challenge) => {
-      const challengeParent = document.querySelector(".challenge-list");
+      const challengeParent = parent;
       const li = document.createElement("li");
       li.classList.add("challenge-item");
       const img = document.createElement("img");
