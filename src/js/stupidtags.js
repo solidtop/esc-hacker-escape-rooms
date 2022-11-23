@@ -1,3 +1,5 @@
+import loadData from "./loadData.js"
+
 
 /* show all and reset
 function w3AddClass element and name argument , add class
@@ -44,3 +46,16 @@ for (var i = 0; i < btn.length; i++) {
     this.className += " active";
   });
 }
+
+async function getTags(loadData) {
+  let data = await loadData();
+  let tags = [];
+  data.forEach((challenge)=> {
+    tags.push(challenge.labels);
+  });
+  tags = tags.flat();
+  tags = new Set(tags);
+  console.log(tags)
+}
+
+getTags(loadData);
