@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="static/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>[ESC] Our challenges</title>
   </head>
 
@@ -34,14 +35,14 @@
           <h4>By type</h4>
           <input
             type="checkbox"
+            value="online"
             name="online-challenge"
-            id="online-challenge"
           />
           <label for="online-challenge">Include online challenges</label>
           <input
             type="checkbox"
+            value="onsite"
             name="on-site-challenge"
-            id="on-site-challenge"
           />
           <label for="on-site-challenge">Include on-site challenges</label>
         </div>
@@ -76,19 +77,23 @@
             <li class="rating-star active"></li>
           </ul>
         </div>
-
-        <div class="filter-by-tags">
-          <h4>By tags</h4>
-          <ul>
-            <li>Web</li>
-            <li>Linux</li>
-            <li>Cryptography</li>
-            <li>Coding</li>
-            <li>Web</li>
-            <li>Web</li>
-          </ul>
+   <!-- W -->
+        <div id="btn-container">
+          <h3>Tags</h3>
+          <button class="btn" onclick ="filterObjects('web')">Web</button>
+          <button class="btn" onclick ="filterObjects('linux')">Linux</button>
+          <button class="btn" onclick ="filterObjects('cryptography')">
+            Cryptography
+          </button>
+          <button class="btn" onclick ="filterObjects('coding')">Coding</button>
+          <button class="btn" onclick ="filterObjects('other')">
+            Some other tag
+          </button>
+          <button class="btn active" onclick ="filterObjects('all')">
+            Show all
+          </button>
         </div>
-
+<!-- W -->
         <div class="filter-by-search">
           <h4>Or type to search for keyword</h4>
           <input type="text" id="text-filter" placeholder="Start typing to filter" />
