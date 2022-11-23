@@ -1,0 +1,68 @@
+.modal-container {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(black, .4);
+    padding: 1em;
+}
+  
+.content {
+    position: relative;
+    max-width: 800px;
+    max-height: 700px;
+    height: 80%;
+    padding: 2em;
+    margin: auto;
+    z-index: 900;
+
+    box-shadow: 0 0 20px rgba(black, .3);
+    border: 2px solid rgba(black, .4);
+    background-color: white;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        display: block;
+        font-size: .7rem;
+        font-weight: bold;
+    }
+
+    input, select {
+        margin-bottom: 1em;
+        padding: 8px;
+        border: 2px solid rgba(black, .2);
+        border-radius: 4px;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    select {
+        width: 200px;
+        height: 50px;
+    }
+
+    .button.primary {
+        font-size: .8rem;
+        margin: 0;
+        padding: 1em 2em;
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+    }
+}
+
+
+.center {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+
+    .button.secondary {
+        background-color: transparent;
+        color: $c-blue;
+        text-decoration: underline;
+        font-size: .8rem;
+    }
+}
+
