@@ -1,4 +1,3 @@
-
 export function createModal(challenge) {
 
     const container = document.createElement('div');
@@ -15,9 +14,9 @@ export function removeModal() {
 }
 
 function renderContent(content) {
-    const modal = document.querySelector('.modal-container'); 
-    modal.innerHTML = '';
-    modal.appendChild(content);
+    const container = document.querySelector('.modal-container'); 
+    container.innerHTML = '';
+    container.appendChild(content);
 }
 
 function step1(challenge) {
@@ -49,14 +48,11 @@ function step1(challenge) {
     button.textContent = 'Search available times';
     form.appendChild(button);
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        console.log('Fetch whatever');
-        const data = mockupData();
-    
-        const content = step2(challenge, data);
-        renderContent(content);
+        const times = await loadTimes(); //Martas function här
+        renderContent(step2(challenge, times));
     });
 
     return form;
@@ -102,13 +98,13 @@ function step2(challenge, times) {
 
     for (let i = 0; i < times.slots.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${times.slots[i]}-${times.slots[i+1] ? times.slots[i+1] : ''}`;
+        option.textContent = times.slots[i];
         selectTime.appendChild(option);
     }
 
     const labelParticipants = document.createElement('label');
     labelParticipants.textContent = 'How many participants?';
-    labelEmail.for = 'select-participants';
+    labelParticipants.for = 'select-participants';
     form.appendChild(labelParticipants);
 
     const selectParticipants = document.createElement('select');
@@ -130,10 +126,10 @@ function step2(challenge, times) {
     form.appendChild(button);
 
     
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        console.log('send whatever');
+        await reserveTime(); //Martas function här
 
         renderContent(step3());
     });
@@ -158,18 +154,3 @@ function step3() {
     return div;
 }
 
-
-
-function mockupData() {
-    return {
-        date: "2022-12-12T00:00:00.000Z",
-        slots: [
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:30",
-            "18:30",
-            "20:00"
-        ]
-    }   
-}
