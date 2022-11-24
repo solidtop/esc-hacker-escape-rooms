@@ -1,4 +1,4 @@
-export default function createModal(challenge) {
+export function createModal(challenge) {
 
     const container = document.createElement('div');
     container.classList.add('modal-container');
@@ -152,12 +152,3 @@ function step3() {
 
     return div;
 }
-
-
-
-const buttons = document.querySelectorAll('.challenge-item button');
-buttons.forEach(button => {
-    button.addEventListener('click', e => {
-        const modal = createModal(challenge);
-    });
-});
