@@ -51,7 +51,7 @@ function step1(challenge) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        await loadTimes(); //Martas function här
+        const times = await loadTimes(); //Martas function här
         renderContent(step2(challenge, times));
     });
 
