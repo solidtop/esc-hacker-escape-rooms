@@ -38,8 +38,7 @@
     }
 
     select {
-        width: 200px;
-        height: 50px;
+        min-width: 200px;
     }
 
     .button.primary {
@@ -50,13 +49,6 @@
         bottom: 1em;
         right: 1em;
     }
-}
-
-
-.center {
-    display: grid;
-    justify-items: center;
-    align-content: center;
 
     .button.secondary {
         background-color: transparent;
@@ -64,5 +56,11 @@
         text-decoration: underline;
         font-size: .8rem;
     }
+}
+
+.center {
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
 
