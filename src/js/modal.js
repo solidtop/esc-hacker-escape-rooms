@@ -1,4 +1,4 @@
-export function createModal(challenge) {
+export default function createModal(challenge) {
 
     const container = document.createElement('div');
     container.classList.add('modal-container');
@@ -51,7 +51,7 @@ function step1(challenge) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        const times = await loadTimes(); //Martas function här
+        await loadTimes(); //Martas function här
         renderContent(step2(challenge, times));
     });
 
@@ -125,7 +125,6 @@ function step2(challenge, times) {
     button.textContent = 'Submit booking';
     form.appendChild(button);
 
-    
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
@@ -139,7 +138,7 @@ function step2(challenge, times) {
 
 function step3() {
     const div = document.createElement('div');
-    div.classList.add('content');
+    div.classList.add('content', 'center');
 
     const message = document.createElement('h1');
     message.textContent = 'Thank you!';
@@ -154,3 +153,11 @@ function step3() {
     return div;
 }
 
+
+
+const buttons = document.querySelectorAll('.challenge-item button');
+buttons.forEach(button => {
+    button.addEventListener('click', e => {
+        const modal = createModal(challenge);
+    });
+});
