@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="static/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <title>[ESC] Our challenges</title>
   </head>
 
@@ -25,85 +28,73 @@
     </nav>
 
     <h2>Our challenges</h2>
-    <section>
-      <button>Filter challenges</button>
-      <div class="filter-container">
-        <h3>Filter challenges</h3>
-        <button class="button-close">X</button>
 
-        <div class="filter-by-type">
-          <h4>By type</h4>
-          <input
-            type="checkbox"
-            value="online"
-            name="online-challenge"
-          />
-          <label for="online-challenge">Include online challenges</label>
-          <input
-            type="checkbox"
-            value="onsite"
-            name="on-site-challenge"
-          />
-          <label for="on-site-challenge">Include on-site challenges</label>
-        </div>
+    <button>Filter challenges</button>
+    <div class="filter-container">
+      <h3>Filter challenges</h3>
+      <button class="button-close">X</button>
 
-        <div class="filter-by-rating">
-          <h4>By rating</h4>
-          <ul
-            role="meter"
-            class="rating"
-            aria-label="rating"
-            arial-valuemin="0"
-            aria-valuemax="5"
-          >
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-          </ul>
-          <label for="rating-star">to</label>
-          <ul
-            role="meter"
-            class="rating"
-            aria-label="rating"
-            arial-valuemin="0"
-            aria-valuemax="5"
-          >
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-          </ul>
-        </div>
-   <!-- W -->
-        <div id="btn-container">
-          <h3>Tags</h3>
-          <button class="btn" onclick ="filterObjects('web')">Web</button>
-          <button class="btn" onclick ="filterObjects('linux')">Linux</button>
-          <button class="btn" onclick ="filterObjects('cryptography')">
-            Cryptography
-          </button>
-          <button class="btn" onclick ="filterObjects('coding')">Coding</button>
-          <button class="btn" onclick ="filterObjects('other')">
-            Some other tag
-          </button>
-          <button class="btn active" onclick ="filterObjects('all')">
-            Show all
-          </button>
-        </div>
-<!-- W -->
-        <div class="filter-by-search">
-          <h4>Or type to search for keyword</h4>
-          <input type="text" id="text-filter" placeholder="Start typing to filter" />
+      <!-- filter-by-type -->
+      <div class="filter-by-type">
+        <h4>By type</h4>
+        <input type="checkbox" value="online" name="online-challenge" />
+        <label for="online-challenge">Include online challenges</label>
+        <input type="checkbox" value="onsite" name="on-site-challenge" />
+        <label for="on-site-challenge">Include on-site challenges</label>
+      </div>
+
+      <!-- filterStar-container -->
+      <div class="filterStar-container">
+        <h3 class="rating-title">By rating</h3>
+        <div class="ratingFilter">
+          <div id="starFrom" class="starsFrom">
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+          </div>
+          <span>to</span>
+          <div id="starTo" class="starsTo">
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+            <a class="starDeactive">x</a>
+          </div>
         </div>
       </div>
-    </section>
+      <!-- btn-container -->
+      <div id="btn-container">
+        <h3>Tags</h3>
+        <button class="btn" onclick="filterObjects('web')">Web</button>
+        <button class="btn" onclick="filterObjects('linux')">Linux</button>
+        <button class="btn" onclick="filterObjects('cryptography')">
+          Cryptography
+        </button>
+        <button class="btn" onclick="filterObjects('coding')">Coding</button>
+        <button class="btn" onclick="filterObjects('other')">
+          Some other tag
+        </button>
+        <button class="btn active" onclick="filterObjects('all')">
+          Show all
+        </button>
+      </div>
+      <!-- filter-by-search -->
+      <div class="filter-by-search">
+        <h4>Or type to search for keyword</h4>
+        <input
+          type="text"
+          id="text-filter"
+          placeholder="Start typing to filter"
+        />
+      </div>
 
-    <section class="challenge-cards">
-      <ul class="challenges-list"></ul>
-    </section>
+      <!-- challenge-cards -->
+      <div class="challenge-cards">
+        <ul class="challenges-list"></ul>
+      </div>
+    </div>
 
     <footer>
       <div class="footer-summary">
@@ -133,6 +124,6 @@
         </menu>
       </nav>
     </footer>
-    <script src="bundle.js"></script>
+    <script src="/src/js/filterStar.js"></script>
   </body>
 </html>
