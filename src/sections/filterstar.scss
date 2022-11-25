@@ -29,7 +29,7 @@
 
 .starsFrom a.active{
   
-  content: url(/static/StarFilled.svg);
+  content: url(/static/star-active.svg);
   background-repeat: no-repeat;
   width: 10px;
   height: 20px;
@@ -40,7 +40,7 @@
 }
 
 .starDeactive{
-  content: url(/static/StarEmpty.svg);
+  content: url(/static/star-inactive.svg);
   background-repeat: no-repeat;
   width: 10px;
   height: 20px;
@@ -79,7 +79,7 @@
 
 .starsTo a.active{
   
-  content: url(StarFilled.svg);
+  content: url(/static/star-active.svg);
   background-repeat: no-repeat;
   width: 10px;
   height: 20px;
