@@ -12,7 +12,6 @@ async function getQueryParams() {
   const params = window.location.search;
   const paramSearch = new URLSearchParams(params);
   const type = paramSearch.get("type");
-
   let data = await loadData();
 
   if(type === "online") {
@@ -21,7 +20,6 @@ async function getQueryParams() {
   else if(type === "onsite") {
     data = filterByType(data, "onsite");
   }
-
   createChallengeCard(data, document.querySelector(".challenges-list"));
 }
 
