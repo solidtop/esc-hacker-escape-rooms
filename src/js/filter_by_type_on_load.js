@@ -16,8 +16,6 @@ async function getQueryParams() {
   //Call function to get API data
   let data = await loadData();
 
-  console.log(data)
-  
   // if type === online || type === onsite Call function for filtering cards via type
   if(type === "online") {
     data = filterByType(data, "online");
@@ -26,7 +24,6 @@ async function getQueryParams() {
   else if(type === "onsite") {
     data = filterByType(data, "onsite");
   }
-  console.log(data)
   //Call function for rendering cards
   createChallengeCard(data, document.querySelector(".challenges-list"));
 }
