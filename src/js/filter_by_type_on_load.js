@@ -13,18 +13,15 @@ async function getQueryParams() {
   const paramSearch = new URLSearchParams(params);
   const type = paramSearch.get("type");
 
-  //Call function to get API data
   let data = await loadData();
 
-  // if type === online || type === onsite Call function for filtering cards via type
   if(type === "online") {
     data = filterByType(data, "online");
   }
-
   else if(type === "onsite") {
     data = filterByType(data, "onsite");
   }
-  //Call function for rendering cards
+
   createChallengeCard(data, document.querySelector(".challenges-list"));
 }
 

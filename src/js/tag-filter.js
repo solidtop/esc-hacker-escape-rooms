@@ -48,6 +48,9 @@ const tagParent = document.querySelector("#btn-container");
 //   });
 // }
 
+/*
+Loops through all challenges and saves all labels/tags in an array
+*/
 async function getTags(loadData) {
   let data = await loadData();
   let tags = [];
@@ -60,10 +63,13 @@ async function getTags(loadData) {
   return tags;
 }
 
+/* 
+Creates button elements for every tag
+Adds eventlistener for buttons and calls function for filtering by selected tags
+*/
 async function displayTags(tagData, parent) {
   let tags = await tagData;
   tags.forEach((tag)=> {
-    console.log(tag)
     const button = document.createElement("button");
     button.addEventListener("click", (event)=> {
       const currentButton = event.target;
@@ -84,7 +90,6 @@ async function displayTags(tagData, parent) {
 async function filterByTags(tags, loadData) {
  let data = await loadData();
  data = data.filter((challenge)=> {
-  console.log(challenge.labels)
   return tags.every((tag)=> {
     return challenge.labels.includes(tag);
   });
