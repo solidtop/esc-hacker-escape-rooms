@@ -4,7 +4,7 @@ export function filterByType(data) {
     checked.forEach(item => {
         types.push(item.value);
     });
-
+    console.log(data.filter(item => types.some(type => item.type.includes(type))))
     return data.filter(item => types.some(type => item.type.includes(type)));
 }
 

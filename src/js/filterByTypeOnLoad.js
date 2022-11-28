@@ -1,9 +1,6 @@
-import loadData from "./loadData.js";
 import { createChallengeCard } from "./challenge-card.js";
 
-const challengeContainer = document.querySelector(".challenge-list");
-
-function filterByType(data, type) {
+function filterByTypeOnLoad(data, type) {
     let filteredData = data.filter((challenge)=> {
         return challenge.type === type;
     });
@@ -18,22 +15,27 @@ function getQueryParams() {
   return type;
 }
 
-async function renderChallenges(getQueryParams, container) {
-  const type =  getQueryParams();
-  let data = await loadData();
+async function renderChallenges(queryParams, container, data, filterFunction, renderFunction) {
+  const type =  queryParams;
+  let challenges = data;
+
+  console.log(type)
 
   if(type === "online") {
-    data = filterByType(data, "online");
+    challenges = filterFunction(challenges, "online");
+    console.log(challenges)
   }
   else if(type === "onsite") {
-    data = filterByType(data, "onsite");
+    challenges = filterFunction(challenges, "onsite");
   }
-  data.forEach((challenge) => {
-    const card = createChallengeCard(challenge);
+  challenges.forEach((challenge) => {
+    const card = renderFunction(challenge);
     container.append(card);
   });
 }
 
-renderChallenges(getQueryParams, challengeContainer);
+export {filterByTypeOnLoad, getQueryParams, renderChallenges}
+
+//renderChallenges(getQueryParams, challengeContainer);
 
 
