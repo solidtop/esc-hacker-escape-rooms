@@ -17,6 +17,8 @@ img {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+
 @import "misc.scss";
 @import "mixins.scss";
 @import "sections/header.scss";
@@ -27,4 +29,9 @@ img {
 @import "sections/story.scss";
 @import "sections/usps.scss";
 @import "sections/footer.scss";
+<<<<<<< HEAD
 @import "sections/filterstar.scss";
+=======
+@import "modal.scss";
+@import "sections/tags.scss"
+>>>>>>> c3487d37e527738b1234442fdbd8cdeee2b730ec

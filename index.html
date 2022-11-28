@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="static/main.css">
-    <script defer src="src/js/popular_challenges.js"></script>
+    <script type="module" src="src/js/popularChallenges.js"></script>
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
@@ -17,8 +18,8 @@
     <nav class="main-nav">
         <button class="main-nav-toggle"></button>
         <menu class="main-menu">
-            <li class="main-menu-item"><a href="challenges.html">Play online</a></li>
-            <li class="main-menu-item"><a href="challenges.html">Play on-site</a></li>
+            <li class="main-menu-item"><a href="challenges.html?type=online">Play online</a></li>
+            <li class="main-menu-item"><a href="challenges.html?type=onsite">Play on-site</a></li>
             <li class="main-menu-item"><a href="">The story</a></li>
             <li class="main-menu-item"><a href="">Contact us </a></li>
         </menu>
@@ -26,8 +27,8 @@
     <section class="hero">
         <img alt="Hacker in front of screens" src="static/hero.png">
         <div class="hero-cta">
-            <a class="button primary" href="challenges.html">Online challenges</a>
-            <a class="button secondary" href="challenges.html">On-site challenges</a>
+            <a class="button primary" href="challenges.html?type=online">Online challenges</a>
+            <a class="button secondary" href="challenges.html?type=onsite">On-site challenges</a>
         </div>
     </section>
     <section class="testimonials">
@@ -123,8 +124,8 @@
         </ul>
 
         <div class="challenges-cta">
-            <a class="button primary" href="challenges.html">Online challenges</a>
-            <a class="button secondary" href="challenges.html">On-site challenges</a>
+            <a class="button primary" href="challenges.html?type=online">Online challenges</a>
+            <a class="button secondary" href="challenges.html?type=onsite">On-site challenges</a>
         </div>
     </section>
 
@@ -183,8 +184,8 @@
                 <li class="misc-link"><a href="">The Story</a></li>
                 <li class="misc-link"><a href="">Contact Us</a></li>
                 <li class="misc-link"><a href="">Legal</a></li>
-                <li class="play-link"><a href="">Play online</a></li>
-                <li class="play-link"><a href="">Play on-site</a></li>
+                <li class="play-link"><a href="challenges.html?type=online">Play online</a></li>
+                <li class="play-link"><a href="challenges.html?type=onsite">Play on-site</a></li>
             </menu>
         </nav>
         <nav class="footer-social">
