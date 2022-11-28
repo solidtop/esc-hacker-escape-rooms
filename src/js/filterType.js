@@ -1,6 +1,6 @@
 import filterAndUpdateCards from './renderChallenges.js';
 
-function filterByTypes(data) {
+export function filterByTypes(data) {
     const types = [];
     const checked = document.querySelectorAll('.filter-by-type input[type=checkbox]:checked');
     checked.forEach(item => {
@@ -10,7 +10,7 @@ function filterByTypes(data) {
     return data.filter(challenge => types.some(type => challenge.type.includes(type)));
 }
 
-export default function handleFilterInput(data) {
+export function handleFilterInput(data) {
     const checkboxes = document.querySelectorAll('.filter-by-type input[type=checkbox]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
