@@ -125,7 +125,6 @@ function step2(challenge, times) {
     button.textContent = 'Submit booking';
     form.appendChild(button);
 
-    
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
@@ -139,7 +138,7 @@ function step2(challenge, times) {
 
 function step3() {
     const div = document.createElement('div');
-    div.classList.add('content');
+    div.classList.add('content', 'center');
 
     const message = document.createElement('h1');
     message.textContent = 'Thank you!';
@@ -153,4 +152,3 @@ function step3() {
 
     return div;
 }
-
