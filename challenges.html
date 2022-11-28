@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="src/js/filterByTypeOnLoad.js"></script>
+    <script type="module" src="src/js/tag-filter.js"></script>
     <link rel="stylesheet" type="text/css" href="static/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>[ESC] Our challenges</title>
@@ -17,8 +19,8 @@
     <nav class="main-nav">
       <button class="main-nav-toggle"></button>
       <menu class="main-menu">
-        <li class="main-menu-item"><a href="">Play online</a></li>
-        <li class="main-menu-item"><a href="">Play on-site</a></li>
+        <li class="main-menu-item"><a href="challenges.html?type=online">Play online</a></li>
+        <li class="main-menu-item"><a href="challenges.html?type=onsite">Play on-site</a></li>
         <li class="main-menu-item"><a href="">The story</a></li>
         <li class="main-menu-item"><a href="">Contact us </a></li>
       </menu>
@@ -77,23 +79,9 @@
             <li class="rating-star active"></li>
           </ul>
         </div>
-   <!-- W -->
         <div id="btn-container">
           <h3>Tags</h3>
-          <button class="btn" onclick ="filterObjects('web')">Web</button>
-          <button class="btn" onclick ="filterObjects('linux')">Linux</button>
-          <button class="btn" onclick ="filterObjects('cryptography')">
-            Cryptography
-          </button>
-          <button class="btn" onclick ="filterObjects('coding')">Coding</button>
-          <button class="btn" onclick ="filterObjects('other')">
-            Some other tag
-          </button>
-          <button class="btn active" onclick ="filterObjects('all')">
-            Show all
-          </button>
         </div>
-<!-- W -->
         <div class="filter-by-search">
           <h4>Or type to search for keyword</h4>
           <input type="text" id="text-filter" placeholder="Start typing to filter" />
@@ -102,7 +90,7 @@
     </section>
 
     <section class="challenge-cards">
-      <ul class="challenges-list"></ul>
+      <ul class="challenge-list"></ul>
     </section>
 
     <footer>
