@@ -1,5 +1,5 @@
-import loadTimes from './js/loadTimes.js';
-import reserveTime from './js/sendReservation.js';
+import loadTimes from './loadTimes.js';
+import reserveTime from './sendReservation.js';
 
 export function createModal(challenge) {
 
