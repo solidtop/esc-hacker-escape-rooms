@@ -59,19 +59,14 @@ export function createChallengeCard(challenge) {
     description.textContent = challenge.description;
     item.appendChild(description);
 
-    const apiTitle = document.createElement("input");
-    apiTitle.setAttribute("hidden", "true")
-    apiTitle.setAttribute("value", challenge.title)
-
-    const apiId = document.createElement("input");
-    apiId.setAttribute("hidden", "true")
-    apiId.setAttribute("value", challenge.id)
+    const currentChallengeObject = document.createElement("input");
+    currentChallengeObject.setAttribute("hidden", "true");
+    currentChallengeObject.setAttribute("value", JSON.stringify(challenge));
 
     const button = document.createElement('button');
     button.classList.add('button', 'primary');
     button.textContent = buttonText;
-    button.append(apiTitle);
-    button.append(apiId);
+    button.append(currentChallengeObject);
     item.appendChild(button);
 
     return item;
