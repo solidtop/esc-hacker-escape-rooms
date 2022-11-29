@@ -59,7 +59,7 @@ export default function createChallengeCard(challenge) {
     description.textContent = challenge.description;
     item.appendChild(description);
 
-    const currentChallengeObject = document.createElement("input");
+    const currentChallengeObject = document.createElement("input"); //TEST TEST
     currentChallengeObject.setAttribute("hidden", "true");
     currentChallengeObject.setAttribute("value", JSON.stringify(challenge));
 
