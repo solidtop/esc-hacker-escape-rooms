@@ -6,7 +6,7 @@ import {
 } from "./js/filterByTypeOnLoad.js";
 import { filterAndUpdateCards } from "./js/renderChallenges.js";
 import { createChallengeCard } from "./js/challenge-card.js";
-import { filterByType } from "./js/filter-type.js";
+import { filterByType } from "./js/filterType.js";
 import { getTags, displayTags, filterByTags } from "./js/tag-filter.js";
 import filterText from "./js/filterText.js";
 
