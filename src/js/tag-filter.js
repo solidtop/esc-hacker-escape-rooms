@@ -1,4 +1,4 @@
-import loadData from "./loadData.js"
+import { filterAndUpdateCards } from "./renderChallenges.js";
 
 const tagParent = document.querySelector("#btn-container");
 
@@ -26,16 +26,6 @@ async function displayTags(tagData, challengeData, parent) {
   const buttons = []
   tags.forEach((tag)=> {
     const button = document.createElement("button");
-    button.addEventListener("click", (event)=> {
-      const currentButton = event.target;
-      currentButton.classList.toggle("active");
-      let selectedTags = parent.querySelectorAll(".active");
-      selectedTags = Array.from(selectedTags);
-      selectedTags = selectedTags.map((tag)=> {
-        return tag.textContent;
-      })
-      const filteredChallenges = filterByTags(selectedTags, challengeData);
-    })
     button.classList.add("btn");
     button.textContent = tag;
     parent.append(button);
@@ -44,15 +34,17 @@ async function displayTags(tagData, challengeData, parent) {
   return buttons;
 }
 
+
+
 async function filterByTags(tags, loadData) {
  let data = await loadData;
- console.log(data)
+ console.log(tags, data)
  data = data.filter((challenge)=> {
-  
   return tags.every((tag)=> {
     return challenge.labels.includes(tag);
   });
  });
+ return data;
 }
 
 export { getTags, displayTags, filterByTags}

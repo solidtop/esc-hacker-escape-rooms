@@ -7,8 +7,8 @@ async function renderChallenges(data, filterFunction=function(data){return data}
     });
   }
 
-  function filterAndUpdateCards(data, renderFunction, challengeContainer, ...filterFunctions) {
-    let challenges = data;
+  async function filterAndUpdateCards(data, renderFunction, challengeContainer, ...filterFunctions) {
+    let challenges = await data;
     console.log(challenges)
     filterFunctions.forEach((filter)=> {
       challenges = filter(challenges);
