@@ -1,9 +1,11 @@
-export function createModal(challenge) {
+import loadTimes from './loadTimes.js';
+/*import reserveTime from './sendBooking.js';*/
+
+export default function createModal(challenge) {
 
     const container = document.createElement('div');
     container.classList.add('modal-container');
     document.body.appendChild(container);
-
     renderContent(step1(challenge));
     
     return container;
@@ -13,13 +15,13 @@ export function removeModal() {
     document.querySelector('.modal-container').remove();
 }
 
-function renderContent(content) {
+async function renderContent(content) {
     const container = document.querySelector('.modal-container'); 
     container.innerHTML = '';
-    container.appendChild(content);
+    container.appendChild(await content);
 }
 
-function step1(challenge) {
+async function step1(challenge) {
 
     const form = document.createElement('form');
     form.classList.add('content');
@@ -50,15 +52,47 @@ function step1(challenge) {
 
     form.addEventListener('submit', async e => {
         e.preventDefault();
+        console.log(inputDate.value);
 
-        const times = await loadTimes(); //Martas function här
-        renderContent(step2(challenge, times));
-    });
+        const requestedDate = inputDate.value;
+
+        let date = new Date();
+        const year = date.getUTCFullYear();
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        date = year + '-' + month + '-' + day;
+        
+        console.log(date)
+
+        let dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+
+        if (dateformat.test(inputDate.value)) {
+            alert('Chosen date is not putten correctly');
+            
+        } else if (inputDate.value == null ) {
+            alert('Chosen date is not valid');
+            
+        } else if (inputDate.value == '') {
+            alert('Please select a date')
+            
+        } else if (inputDate <= newDate) {
+            alert('Date can\'t be in the past');
+            
+        } else {
+            const times = await loadTimes(challenge.id, requestedDate); 
+            renderContent(step2(challenge, times));
+
+      /* if (times.booking.date != requestedDate) {
+       alert('No matching available date, please choose again.\nThe available date is ' + times.booking.date)
+       }
+        } */
+        
+        }})
 
     return form;
 }
 
-function step2(challenge, times) {
+async function step2(challenge, times) {
 
     const form = document.createElement('form');
     form.classList.add('content');
@@ -126,9 +160,10 @@ function step2(challenge, times) {
     form.appendChild(button);
 
     form.addEventListener('submit', async e => {
+
         e.preventDefault();
 
-        await reserveTime(); //Martas function här
+        //await reserveTime(); 
 
         renderContent(step3());
     });
@@ -152,3 +187,4 @@ function step3() {
 
     return div;
 }
+

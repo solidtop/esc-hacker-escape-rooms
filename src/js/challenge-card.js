@@ -1,4 +1,4 @@
-export function createChallengeCard(challenge) {
+export default function createChallengeCard(challenge) {
    
     let iconType, buttonText, typeTitle;
     if (challenge.type === 'online') {

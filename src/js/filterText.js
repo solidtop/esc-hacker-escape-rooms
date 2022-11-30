@@ -1,6 +1,6 @@
 export default function filterText(data) {
   let inputvalue = document.getElementById("text-filter").value;
-  //console.log(inputvalue);
+  console.log(inputvalue);
   if (inputvalue) {
   return data.filter(
     (item) =>
