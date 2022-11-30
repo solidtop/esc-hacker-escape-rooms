@@ -1,11 +1,11 @@
 import loadData from "./js/loadData.js";
-import filterText from "./js/filterText";
+import filterPopularChallenges from "./js/filterPopularChallenges.js";
+import createChallengeCard from "./js/challengeCard.js";
+import { renderChallenges } from "./js/renderChallenges.js";
 
 (async () => {
-  let challangesArray = await loadData();
-
-  document.getElementById("text-filter").addEventListener("keyup", () => {
-    const newArray = filterText(challangesArray);
-    console.log(newArray);
-  });
+  console.log("here")
+  let challengesArray = await loadData();
+  renderChallenges(challengesArray, filterPopularChallenges, createChallengeCard, document.querySelector(".challenge-list"));
+  
 })();

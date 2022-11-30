@@ -1,4 +1,4 @@
-import { createChallengeCard } from "./challenge-card.js";
+import createChallengeCard from "./challengeCard.js";
 
 function filterByTypeOnLoad(data, type) {
     let filteredData = data.filter((challenge)=> {

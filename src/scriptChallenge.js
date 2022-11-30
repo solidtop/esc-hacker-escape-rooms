@@ -5,8 +5,8 @@ import {
   renderChallenges,
 } from "./js/filterByTypeOnLoad.js";
 import { filterAndUpdateCards } from "./js/renderChallenges.js";
-import { createChallengeCard } from "./js/challenge-card.js";
-import { filterByType } from "./js/filterType.js";
+import createChallengeCard from "./js/challengeCard.js";
+import { filterByTypes } from "./js/filterType.js";
 import { getTags, displayTags, filterByTags } from "./js/tag-filter.js";
 import filterText from "./js/filterText.js";
 
@@ -52,7 +52,7 @@ async function run() {
         createChallengeCard,
         challengeContainer,
         filterText,
-        filterByType
+        filterByTypes
       );
     });
   });
@@ -71,7 +71,7 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByType
+      filterByTypes
     );
   });
 
@@ -89,7 +89,7 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByType
+      filterByTypes
     );
   });
 
@@ -107,7 +107,7 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByType
+      filterByTypes
     );
   });
 }

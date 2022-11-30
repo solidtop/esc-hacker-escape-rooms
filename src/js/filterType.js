@@ -1,4 +1,4 @@
-import filterAndUpdateCards from './renderChallenges.js';
+import { filterAndUpdateCards } from './renderChallenges.js';
 
 export function filterByTypes(data) {
     const types = [];
@@ -6,7 +6,6 @@ export function filterByTypes(data) {
     checked.forEach(item => {
         types.push(item.value);
     });
-
     return data.filter(challenge => types.some(type => challenge.type.includes(type)));
 }
 
