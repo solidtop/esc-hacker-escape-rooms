@@ -5,7 +5,7 @@
     padding: 1em;
 }
   
-.content {
+.modal-content {
     position: relative;
     max-width: 800px;
     max-height: 700px;
@@ -13,7 +13,7 @@
     padding: 2em;
     margin: auto;
     z-index: 900;
-
+    
     box-shadow: 0 0 20px rgba(black, .3);
     border: 2px solid rgba(black, .4);
     background-color: white;

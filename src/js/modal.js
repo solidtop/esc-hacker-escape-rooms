@@ -1,7 +1,7 @@
 import loadTimes from './loadTimes.js';
-/*import reserveTime from './sendBooking.js';*/
+import reserveTime from './sendReservation.js';
 
-export default function createModal(challenge) {
+export function createModal(challenge) {
 
     const container = document.createElement('div');
     container.classList.add('modal-container');
@@ -24,7 +24,7 @@ async function renderContent(content) {
 async function step1(challenge) {
 
     const form = document.createElement('form');
-    form.classList.add('content');
+    form.classList.add('modal-content');
 
     const h1 = document.createElement('h1');
     h1.textContent = `Book room ${challenge.title} (step 1)`;
@@ -95,7 +95,7 @@ async function step1(challenge) {
 async function step2(challenge, times) {
 
     const form = document.createElement('form');
-    form.classList.add('content');
+    form.classList.add('modal-content');
 
     const h1 = document.createElement('h1');
     h1.textContent = `Book room ${challenge.title} (step 2)`;
@@ -173,7 +173,7 @@ async function step2(challenge, times) {
 
 function step3() {
     const div = document.createElement('div');
-    div.classList.add('content', 'center');
+    div.classList.add('modal-content', 'center');
 
     const message = document.createElement('h1');
     message.textContent = 'Thank you!';
