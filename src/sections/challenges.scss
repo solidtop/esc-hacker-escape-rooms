@@ -13,7 +13,12 @@
     overflow-x: scroll;
 }
 
+.grid {
+    flex-wrap: wrap;
+}
+
 .challenge-item {
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-width: 360px;
@@ -33,14 +38,14 @@
 
     .challenge-image {
         grid-column: span 2;
+        width: 100%;
     }
 
     .challenge-image-icon {
         position: absolute;
-        right: 5px;
-        top: 5px;
-        height: 40px;
-        width: 40px;
+        right: .5em;
+        top: .5em;
+        font-size: 40px;
     }
 
     .challenge-title {
@@ -70,4 +75,5 @@
     @include responsive-ctas;
     margin: 4rem 3rem;
 }
+
 
