@@ -493,86 +493,6 @@ footer a:hover {
   }
 }
 
-<<<<<<< HEAD
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.starsFrom {
-  display: flex;
-}
-
-.starsFrom a {
-  opacity: 50%;
-  cursor: pointer;
-  padding: 3px;
-}
-
-.starsFrom:hover a {
-  opacity: 100%;
-}
-
-.starsFrom a:hover {
-  opacity: 100%;
-}
-
-.starsFrom a:hover ~ a {
-  opacity: 50%;
-}
-
-.starsFrom a.active {
-  content: url(/static/star-active.svg);
-  background-repeat: no-repeat;
-  width: 10px;
-  height: 20px;
-  background-size: contain;
-  outline: none;
-  position: relative;
-}
-
-.starDeactive {
-  content: url(/static/star-inactive.svg);
-  background-repeat: no-repeat;
-  width: 10px;
-  height: 20px;
-  background-size: contain;
-  outline: none;
-}
-
-/* STARS TO  */
-.starsTo {
-  display: flex;
-}
-
-.starsTo a {
-  opacity: 50%;
-  cursor: pointer;
-  padding: 3px;
-}
-
-.starsTo:hover a {
-  opacity: 100%;
-}
-
-.starsTo a:hover {
-  opacity: 100%;
-}
-
-.starsTo a:hover ~ a {
-  opacity: 50%;
-}
-
-.starsTo a.active {
-  content: url(/static/star-active.svg);
-  background-repeat: no-repeat;
-  width: 10px;
-  height: 20px;
-  background-size: contain;
-  outline: none;
-  position: relative;
-}
-=======
 /*Test css*/
 .box {
   background-color: #fff;
@@ -613,4 +533,3 @@ footer a:hover {
 }
 
 /*# sourceMappingURL=main.css.map */
->>>>>>> c3487d37e527738b1234442fdbd8cdeee2b730ec
