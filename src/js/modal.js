@@ -41,6 +41,7 @@ async function step1(challenge) {
 
     const inputDate = document.createElement('input');
     inputDate.type = 'date';
+    inputDate.setAttribute('min', new Date().toLocaleDateString())
     form.appendChild(inputDate);
 
     const button = document.createElement('button');
@@ -52,40 +53,16 @@ async function step1(challenge) {
 
     form.addEventListener('submit', async e => {
         e.preventDefault();
-        console.log(inputDate.value);
 
         const requestedDate = inputDate.value;
-
-        let date = new Date();
-        const year = date.getUTCFullYear();
-        const month = date.getUTCMonth() + 1;
-        const day = date.getUTCDate();
-        date = year + '-' + month + '-' + day;
         
-        console.log(date)
-
-        let dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-
-        if (dateformat.test(inputDate.value)) {
-            alert('Chosen date is not putten correctly');
-            
-        } else if (inputDate.value == null ) {
-            alert('Chosen date is not valid');
-            
-        } else if (inputDate.value == '') {
-            alert('Please select a date')
-            
-        } else if (inputDate <= newDate) {
+        if (inputDate.value == null ) {
+            alert('Chosen date is not valid. Please try again.');
+        } else if (inputDate.value <= new Date().toLocaleString()) {
             alert('Date can\'t be in the past');
-            
         } else {
             const times = await loadTimes(challenge.id, requestedDate); 
             renderContent(step2(challenge, times));
-
-      /* if (times.booking.date != requestedDate) {
-       alert('No matching available date, please choose again.\nThe available date is ' + times.booking.date)
-       }
-        } */
         
         }})
 
