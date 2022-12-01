@@ -43,7 +43,6 @@ export function handleStarInput(data) {
           otherStar.classList.remove("active");
         }
       });
-      console.log(filterByRating(data));
     });
   });
 }
