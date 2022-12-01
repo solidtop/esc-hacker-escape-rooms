@@ -1,3 +1,6 @@
+import loadTimes from './loadTimes.js';
+import reserveTime from './sendReservation.js';
+
 export function createModal(challenge) {
 
     const container = document.createElement('div');
@@ -22,7 +25,7 @@ function renderContent(content) {
 function step1(challenge) {
 
     const form = document.createElement('form');
-    form.classList.add('content');
+    form.classList.add('modal-content');
 
     const h1 = document.createElement('h1');
     h1.textContent = `Book room ${challenge.title} (step 1)`;
@@ -51,7 +54,7 @@ function step1(challenge) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        const times = await loadTimes(); //Martas function här
+        const times = await loadTimes(); 
         renderContent(step2(challenge, times));
     });
 
@@ -61,7 +64,7 @@ function step1(challenge) {
 function step2(challenge, times) {
 
     const form = document.createElement('form');
-    form.classList.add('content');
+    form.classList.add('modal-content');
 
     const h1 = document.createElement('h1');
     h1.textContent = `Book room ${challenge.title} (step 2)`;
@@ -128,7 +131,7 @@ function step2(challenge, times) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        await reserveTime(); //Martas function här
+        await reserveTime(); 
 
         renderContent(step3());
     });
@@ -138,7 +141,7 @@ function step2(challenge, times) {
 
 function step3() {
     const div = document.createElement('div');
-    div.classList.add('content', 'center');
+    div.classList.add('modal-content', 'center');
 
     const message = document.createElement('h1');
     message.textContent = 'Thank you!';
