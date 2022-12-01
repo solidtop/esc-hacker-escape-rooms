@@ -142,15 +142,13 @@ async function step2(challenge, times) {
 
         let requestedName = document.querySelector(".input-name").value;
         let requestedEmail = document.querySelector(".input-email").value;
-        let requestedParticipants = document.querySelector(
-            ".select-participants"
-        ).value;
+        let requestedParticipants = document.querySelector(".select-participants").value;
         let requestedTime = document.querySelector(".select-time").value;
         let requestedDate = times.date;
         let challengeId = challenge.id;
         let matches = requestedParticipants.match(/(\d+)/);
 
-        requestedParticipants = parseInt(matches[0]);
+        
 
         if (requestedName === "" || requestedEmail === "") {
             alert("Please fill in requested fields.");
@@ -159,6 +157,7 @@ async function step2(challenge, times) {
         } else if (requestedTime === "-- Choose time --") {
             alert("Please choose time.");
         } else {
+            requestedParticipants = parseInt(matches[0]);
             await reserveTime(
                 challengeId,
                 requestedName,

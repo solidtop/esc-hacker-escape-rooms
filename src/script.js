@@ -1,7 +1,7 @@
 import loadData from "./js/loadData.js";
 import filterText from "./js/filterText.js";
 import { createModal } from "./js/modal.js"
-import createChallengeCard from "./js/challengeCard.js"
+
 
 (async () => {
   let challengesArray = await loadData();
@@ -16,7 +16,6 @@ import createChallengeCard from "./js/challengeCard.js"
       createModal(challenge);
     });
 });
-
 
 })();
 
