@@ -56,14 +56,11 @@ async function step1(challenge) {
 
         const requestedDate = inputDate.value;
         
-        if (inputDate.value == null ) {
-            alert('Chosen date is not valid. Please try again.');
-        } else if (inputDate.value <= new Date().toLocaleString()) {
-            alert('Date can\'t be in the past');
+        if (inputDate.value === '' ) {
+            alert('Please choose a date');
         } else {
             const times = await loadTimes(challenge.id, requestedDate); 
             renderContent(step2(challenge, times));
-        
         }})
 
     return form;
