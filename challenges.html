@@ -25,67 +25,79 @@
       </menu>
     </nav>
 
-    <h2>Our challenges</h2>
-    <section>
-      <button>Filter challenges</button>
-      <div class="filter-container">
+    <section class="our-challenges">
+      <h2>Our challenges</h2>
+      <button class="button primary" id="show-filters">Filter challenges</button>
+      
+      <menu class="filter-container">
         <h3>Filter challenges</h3>
-        <button class="button-close">X</button>
+        <button class="button-close" id="hide-filters"><i class="fa-solid fa-xmark"></i></button>
 
         <div class="filter-by-type">
           <h4>By type</h4>
-          <input
-            type="checkbox"
-            value="online"
-            name="online-challenge"
-          />
-          <label for="online-challenge">Include online challenges</label>
-          <input
-            type="checkbox"
-            value="onsite"
-            name="on-site-challenge"
-          />
-          <label for="on-site-challenge">Include on-site challenges</label>
+          <fieldset>
+            <input
+              type="checkbox"
+              value="online"
+              name="online-challenge"
+            />
+            <label for="online-challenge">Include online challenges</label>
+          </fieldset>
+          
+          <fieldset>
+            <input
+              type="checkbox"
+              value="onsite"
+              name="on-site-challenge"
+            />
+            <label for="on-site-challenge">Include on-site challenges</label>
+          </fieldset>
         </div>
 
         <div class="filter-by-rating">
           <h4>By rating</h4>
-          <ul
-            role="meter"
-            class="rating"
-            aria-label="rating"
-            arial-valuemin="0"
-            aria-valuemax="5"
-          >
-            <li class="rating-star starFrom  inactive"></li>
-            <li class="rating-star starFrom  inactive"></li>
-            <li class="rating-star starFrom  inactive"></li>
-            <li class="rating-star starFrom  inactive"></li>
-            <li class="rating-star starFrom  inactive"></li>
-          </ul>
-          <label for="rating-star">to</label>
-          <ul
-            role="meter"
-            class="rating"
-            aria-label="rating"
-            arial-valuemin="0"
-            aria-valuemax="5"
-          >
-            <li class="rating-star starTo active"></li>
-            <li class="rating-star starTo active"></li>
-            <li class="rating-star starTo active"></li>
-            <li class="rating-star starTo active"></li>
-            <li class="rating-star starTo active"></li>
-          </ul>
+          <div class="stars">
+            <ul
+              role="meter"
+              class="starsFrom"
+              id="starFrom"
+              aria-label="rating"
+              arial-valuemin="0"
+              aria-valuemax="5"
+            >
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+            </ul>
+            <span>to</span>
+            <ul
+              role="meter"
+              class="starsTo"
+              id="starTo"
+              aria-label="rating"
+              arial-valuemin="0"
+              aria-valuemax="5"
+            >
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+              <li class="starDeactive"></li>
+            </ul>
+          </div>
         </div>
-        <div id="btn-container">
-          <h3>Tags</h3>
+
+        <div class="filter-by-tags" id="btn-container">
+          <h4>Tags</h4>
         </div>
+
         <div class="filter-by-search">
           <h4>Or type to search for keyword</h4>
           <input type="text" id="text-filter" placeholder="Start typing to filter" />
         </div>
-      </div>
+      </menu>
     </section>
 
     <section class="challenges">
