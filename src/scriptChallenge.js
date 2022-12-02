@@ -47,7 +47,7 @@ async function run() {
 
   ratingStars.forEach((star) => {
     star.addEventListener("click", async () => {
-      let selectedTags = document.querySelectorAll(".starsFrom .active");
+      let selectedTags = ratingStars.querySelectorAll(".active");
       selectedTags = Array.from(selectedTags);
       selectedTags = selectedTags.map((tag) => {
         return tag.textContent;
