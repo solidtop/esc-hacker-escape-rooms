@@ -124,7 +124,7 @@ async function step2(challenge, times) {
     form.appendChild(selectParticipants);
 
     let amountOfOptions = challenge.maxParticipants - challenge.minParticipants;
-    for (let i = 0; i < amountOfOptions; i++) {
+    for (let i = 0; i <= amountOfOptions; i++) {
         const option = document.createElement("option");
         option.textContent = `${challenge.minParticipants + i} participants`;
         selectParticipants.appendChild(option);
