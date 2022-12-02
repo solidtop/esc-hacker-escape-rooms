@@ -71,7 +71,6 @@ async function run() {
   
   //Add eventlistener for tag buttons
   (await buttons).forEach((button) => {
-    console.log(button);
     button.addEventListener("click", async (event) => {
       const currentButton = event.target;
       currentButton.classList.toggle("active");
@@ -101,7 +100,6 @@ async function run() {
       return tag.textContent;
     });
     let data = challenges;
-    console.log(data)
     data = await filterByTags(selectedTags, data);
     filterAndUpdateCards(
       data,
@@ -121,7 +119,6 @@ async function run() {
       return tag.textContent;
     });
     let data = challenges;
-    console.log(data)
     data = await filterByTags(selectedTags, data);
     filterAndUpdateCards(
       data,
@@ -141,7 +138,6 @@ async function run() {
       return tag.textContent;
     });
     let data = challenges;
-    console.log(data)
     data = await filterByTags(selectedTags, data);
     filterAndUpdateCards(
       data,

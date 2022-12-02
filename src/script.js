@@ -4,8 +4,6 @@ import createChallengeCard from "./js/challengeCard.js";
 import { renderChallenges } from "./js/renderChallenges.js";
 
 (async () => {
-  console.log("here")
   let challengesArray = await loadData();
   renderChallenges(challengesArray, filterPopularChallenges, createChallengeCard, document.querySelector(".challenge-list"));
-  
 })();

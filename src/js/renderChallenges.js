@@ -13,16 +13,12 @@ async function renderChallenges(data, filterFunction=function(data){return data}
     challengeContainer.nextElementSibling.classList.add("hidden");
     filterFunctions.forEach((filter)=> {
       challenges = filter(challenges);
-      console.log(challenges)
     });
     if(challenges.length === 0) {
-      console.log("h")
-      console.log(challengeContainer.nextSibling)
       challengeContainer.nextElementSibling.classList.remove("hidden");
     } else {
       challenges.forEach((challenge)=> {
         const currentCard = renderFunction(challenge);
-        console.log(currentCard)
         challengeContainer.append(currentCard);
       });
     }

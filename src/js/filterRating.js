@@ -50,7 +50,6 @@ export function handleStarInput() {
 export function filterByRating(data){
   const valueFrom = document.querySelectorAll('.starFrom.active');
   const valueTo = document.querySelectorAll('.starTo.active');
-  console.log(valueFrom, valueTo)
   return data.filter(challenge => {
     return challenge.rating >= valueFrom.length && challenge.rating <= valueTo.length
   });
