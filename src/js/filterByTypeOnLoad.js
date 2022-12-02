@@ -31,7 +31,3 @@ async function renderChallenges(queryParams, container, data, filterFunction, re
 }
 
 export {filterByTypeOnLoad, getQueryParams, renderChallenges}
-
-//renderChallenges(getQueryParams, challengeContainer);
-
-
