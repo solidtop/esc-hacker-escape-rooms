@@ -1,8 +1,8 @@
 
 export function handleStarInput(data) {
 
-  const starsFrom = document.querySelectorAll(".starsFrom li");
-  const starsTo = document.querySelectorAll(".starsTo li");
+  const starsFrom = document.querySelectorAll(".starFrom");
+  const starsTo = document.querySelectorAll(".starTo");
   
   let activeIdx = null;
 
@@ -48,9 +48,9 @@ export function handleStarInput(data) {
 }
 
 export function filterByRating(data){
-  const valueFrom = document.querySelectorAll('#starFrom .active');
-  const valueTo = document.querySelectorAll('#starTo .active');
-
+  const valueFrom = document.querySelectorAll('.starFrom.active');
+  const valueTo = document.querySelectorAll('.starTo.active');
+  console.log(valueFrom, valueTo)
   return data.filter(challenge => {
     return challenge.rating >= valueFrom.length && challenge.rating <= valueTo.length
   });

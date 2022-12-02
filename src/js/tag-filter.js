@@ -1,7 +1,3 @@
-import { filterAndUpdateCards } from "./renderChallenges.js";
-
-const tagParent = document.querySelector("#btn-container");
-
 /*
 Loops through all challenges and saves all labels/tags in an array
 */
@@ -38,7 +34,6 @@ async function displayTags(tagData, challengeData, parent) {
 
 async function filterByTags(tags, loadData) {
  let data = await loadData;
- console.log(tags, data)
  data = data.filter((challenge)=> {
   return tags.every((tag)=> {
     return challenge.labels.includes(tag);
@@ -48,5 +43,3 @@ async function filterByTags(tags, loadData) {
 }
 
 export { getTags, displayTags, filterByTags}
-
-//displayTags(getTags(loadData), tagParent);

@@ -9,6 +9,7 @@ import createChallengeCard from "./js/challengeCard.js";
 import { filterByTypes } from "./js/filterType.js";
 import { getTags, displayTags, filterByTags } from "./js/tag-filter.js";
 import filterText from "./js/filterText.js";
+import { handleStarInput, filterByRating } from "./js/filterRating.js";
 
 const challengeContainer = document.querySelector(".challenge-list");
 const textFilter = document.querySelector("#text-filter");
@@ -21,6 +22,7 @@ const onsiteTypeInput = document.querySelector(
 const tagParent = document.querySelector("#btn-container");
 
 async function run() {
+  handleStarInput([])
   const challenges = await loadData();
   const queryParams = getQueryParams();
   renderChallenges(
@@ -52,7 +54,8 @@ async function run() {
         createChallengeCard,
         challengeContainer,
         filterText,
-        filterByTypes
+        filterByTypes,
+        filterByRating
       );
     });
   });
@@ -71,7 +74,8 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByTypes
+      filterByTypes,
+      filterByRating
     );
   });
 
@@ -89,7 +93,8 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByTypes
+      filterByTypes,
+      filterByRating
     );
   });
 
@@ -107,7 +112,8 @@ async function run() {
       createChallengeCard,
       challengeContainer,
       filterText,
-      filterByTypes
+      filterByTypes,
+      filterByRating
     );
   });
 }
