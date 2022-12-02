@@ -7,7 +7,7 @@ import {
 import { filterAndUpdateCards } from "./js/renderChallenges.js";
 import createChallengeCard from "./js/challengeCard.js";
 import { filterByTypes } from "./js/filterType.js";
-import { getTags, displayTags, filterByTags } from "./js/tag-filter.js";
+import { getTags, displayTags, filterByTags } from "./js/tagFilter.js";
 import filterText from "./js/filterText.js";
 import { handleStarInput, filterByRating } from "./js/filterRating.js";
 
@@ -20,9 +20,9 @@ const onsiteTypeInput = document.querySelector(
   "input[name='on-site-challenge']"
 );
 const tagParent = document.querySelector("#btn-container");
+const ratingStars = document.querySelectorAll(".rating-star");
 
 async function run() {
-  handleStarInput([])
   const challenges = await loadData();
   const queryParams = getQueryParams();
   renderChallenges(
@@ -33,9 +33,33 @@ async function run() {
     createChallengeCard
   );
 
+  //Add eventlistener for stars
+  handleStarInput();
+  ratingStars.forEach((star)=> {
+    star.addEventListener("click", async () => {
+        let selectedTags = tagParent.querySelectorAll(".active");
+        selectedTags = Array.from(selectedTags);
+        selectedTags = selectedTags.map((tag) => {
+          return tag.textContent;
+        });
+        let data = challenges;
+        console.log(data)
+        data = await filterByTags(selectedTags, data);
+        filterAndUpdateCards(
+          data,
+          createChallengeCard,
+          challengeContainer,
+          filterText,
+          filterByTypes,
+          filterByRating
+        );
+      });
+  });
+
   const tags = getTags(challenges);
   const buttons = displayTags(tags, challenges, tagParent);
-  console.log(buttons);
+  
+  //Add eventlistener for tag buttons
   (await buttons).forEach((button) => {
     console.log(button);
     button.addEventListener("click", async (event) => {
@@ -47,7 +71,6 @@ async function run() {
         return tag.textContent;
       });
       let data = challenges;
-      console.log(data)
       data = await filterByTags(selectedTags, data);
       filterAndUpdateCards(
         data,
@@ -60,6 +83,7 @@ async function run() {
     });
   });
 
+  // Add eventlistener for text filter
   textFilter.addEventListener("keyup", async () => {
     let selectedTags = tagParent.querySelectorAll(".active");
     selectedTags = Array.from(selectedTags);
@@ -79,6 +103,7 @@ async function run() {
     );
   });
 
+  //Add eventlistener for type online
   onlineTypeInput.addEventListener("click", async () => {
     let selectedTags = tagParent.querySelectorAll(".active");
     selectedTags = Array.from(selectedTags);
@@ -98,6 +123,7 @@ async function run() {
     );
   });
 
+  //Add eventlistener for type onsite
   onsiteTypeInput.addEventListener("click", async () => {
     let selectedTags = tagParent.querySelectorAll(".active");
     selectedTags = Array.from(selectedTags);

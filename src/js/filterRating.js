@@ -1,5 +1,5 @@
 
-export function handleStarInput(data) {
+export function handleStarInput() {
 
   const starsFrom = document.querySelectorAll(".starFrom");
   const starsTo = document.querySelectorAll(".starTo");
