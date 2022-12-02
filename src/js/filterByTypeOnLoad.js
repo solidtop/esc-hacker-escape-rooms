@@ -1,5 +1,3 @@
-import createChallengeCard from "./challengeCard.js";
-
 function filterByTypeOnLoad(data, type) {
     let filteredData = data.filter((challenge)=> {
         return challenge.type === type;
@@ -18,8 +16,6 @@ function getQueryParams() {
 async function renderChallenges(queryParams, container, data, filterFunction, renderFunction) {
   const type =  queryParams;
   let challenges = data;
-
-  console.log(type)
 
   if(type === "online") {
     challenges = filterFunction(challenges, "online");

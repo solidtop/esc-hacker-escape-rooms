@@ -33,6 +33,16 @@ async function run() {
     createChallengeCard
   );
 
+  if(queryParams === "online") {
+    onlineTypeInput.setAttribute("checked", "true");
+  } 
+  else if(queryParams === "onsite") {
+    onsiteTypeInput.setAttribute("checked", "true");
+  } else {
+    onlineTypeInput.setAttribute("checked", "true");
+    onsiteTypeInput.setAttribute("checked", "true");
+  }
+
   //Add eventlistener for stars
   handleStarInput();
   ratingStars.forEach((star)=> {
