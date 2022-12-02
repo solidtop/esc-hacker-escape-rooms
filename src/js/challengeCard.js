@@ -15,7 +15,7 @@ export default function createChallengeCard(challenge) {
     item.classList.add('challenge-item');
 
     const i = document.createElement('i');
-    i.setAttribute('class', icon);
+    i.setAttribute('class', icon + ' challenge-image-icon');
     item.appendChild(i);
 
     const image = document.createElement('img');

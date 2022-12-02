@@ -318,7 +318,12 @@ header h1 {
   overflow-x: scroll;
 }
 
+.grid {
+  flex-wrap: wrap;
+}
+
 .challenge-item {
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-width: 360px;
@@ -337,13 +342,14 @@ header h1 {
 }
 .challenge-item .challenge-image {
   grid-column: span 2;
+  width: 100%;
 }
 .challenge-item .challenge-image-icon {
   position: absolute;
-  right: 5px;
-  top: 5px;
-  height: 40px;
-  width: 40px;
+  right: 0.5em;
+  top: 0.5em;
+  font-size: 40px;
+  color: #011827;
 }
 .challenge-item .challenge-title {
   grid-column: span 2;
