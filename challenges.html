@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="src/js/filterByTypeOnLoad.js"></script>
-    <script type="module" src="src/js/tag-filter.js"></script>
+    <script type="module" src="src/scriptChallenge.js"></script>
     <link rel="stylesheet" type="text/css" href="static/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>[ESC] Our challenges</title>
@@ -58,11 +57,11 @@
             arial-valuemin="0"
             aria-valuemax="5"
           >
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
-            <li class="rating-star inactive"></li>
+            <li class="rating-star starFrom  inactive"></li>
+            <li class="rating-star starFrom  inactive"></li>
+            <li class="rating-star starFrom  inactive"></li>
+            <li class="rating-star starFrom  inactive"></li>
+            <li class="rating-star starFrom  inactive"></li>
           </ul>
           <label for="rating-star">to</label>
           <ul
@@ -72,11 +71,11 @@
             arial-valuemin="0"
             aria-valuemax="5"
           >
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
-            <li class="rating-star active"></li>
+            <li class="rating-star starTo active"></li>
+            <li class="rating-star starTo active"></li>
+            <li class="rating-star starTo active"></li>
+            <li class="rating-star starTo active"></li>
+            <li class="rating-star starTo active"></li>
           </ul>
         </div>
         <div id="btn-container">
@@ -91,6 +90,7 @@
 
     <section class="challenges">
       <ul class="challenge-list grid"></ul>
+      <p class="no-matching-challenges hidden">No matching challenges</p>
     </section>
 
     <footer>
