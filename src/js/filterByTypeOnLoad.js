@@ -1,5 +1,5 @@
 import loadData from "./loadData.js";
-import { createChallengeCard } from "./challenge-card.js";
+import  createChallengeCard  from "./challengeCard.js";
 
 const challengeContainer = document.querySelector(".challenge-list");
 

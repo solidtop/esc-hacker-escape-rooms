@@ -493,6 +493,65 @@ footer a:hover {
   }
 }
 
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1em;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  max-height: 700px;
+  height: 80%;
+  padding: 2em;
+  margin: auto;
+  z-index: 900;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+.modal-content h1 {
+  font-size: 1.5rem;
+}
+.modal-content label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.modal-content input, .modal-content select {
+  margin-bottom: 1em;
+  padding: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+.modal-content select {
+  min-width: 200px;
+}
+.modal-content .button.primary {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 1em 2em;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+.modal-content .button.secondary {
+  background-color: transparent;
+  color: #36769D;
+  text-decoration: underline;
+  font-size: 0.8rem;
+}
+
+.center {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
 /*Test css*/
 .box {
   background-color: #fff;
@@ -531,5 +590,3 @@ footer a:hover {
   background-color: rgb(56, 58, 66);
   color: white;
 }
-
-/*# sourceMappingURL=main.css.map */
