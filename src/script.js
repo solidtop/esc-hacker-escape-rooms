@@ -1,11 +1,23 @@
 import loadData from "./js/loadData.js";
-import filterText from "./js/filterText";
+import filterPopularChallenges from "./js/filterPopularChallenges.js";
+import createChallengeCard from "./js/challengeCard.js";
+import { renderChallenges } from "./js/renderChallenges.js";
+import filterText from "./js/filterText.js";
+import { createModal } from "./js/modal.js"
 
 (async () => {
-  let challangesArray = await loadData();
-
-  document.getElementById("text-filter").addEventListener("keyup", () => {
-    const newArray = filterText(challangesArray);
-    console.log(newArray);
+  let challengesArray = await loadData();
+  renderChallenges(challengesArray, filterPopularChallenges, createChallengeCard, document.querySelector(".challenge-list"));
+  document.getElementById('text-filter').addEventListener('keyup', () => {
+     return filterText(challengesArray);
   });
+
+  document.querySelectorAll('.challenge-item button').forEach(button => {
+    button.addEventListener('click', e => {
+      const challenge = JSON.parse(button.querySelector('input').value);
+      createModal(challenge);
+    });
+});
+
 })();
+
