@@ -19,6 +19,7 @@ const onlineTypeInput = document.querySelector(
 const onsiteTypeInput = document.querySelector(
   "input[name='on-site-challenge']"
 );
+const typeInputs = [onlineTypeInput, onsiteTypeInput];
 const tagParent = document.querySelector("#btn-container");
 const ratingStars = document.querySelectorAll(".rating-star");
 
@@ -111,42 +112,25 @@ async function run() {
     );
   });
 
-  //Add eventlistener for type online
-  onlineTypeInput.addEventListener("click", async () => {
-    let selectedTags = tagParent.querySelectorAll(".active");
-    selectedTags = Array.from(selectedTags);
-    selectedTags = selectedTags.map((tag) => {
-      return tag.textContent;
-    });
-    let data = challenges;
-    data = await filterByTags(selectedTags, data);
-    filterAndUpdateCards(
-      data,
-      createChallengeCard,
-      challengeContainer,
-      filterText,
-      filterByTypes,
-      filterByRating
-    );
-  });
-
-  //Add eventlistener for type onsite
-  onsiteTypeInput.addEventListener("click", async () => {
-    let selectedTags = tagParent.querySelectorAll(".active");
-    selectedTags = Array.from(selectedTags);
-    selectedTags = selectedTags.map((tag) => {
-      return tag.textContent;
-    });
-    let data = challenges;
-    data = await filterByTags(selectedTags, data);
-    filterAndUpdateCards(
-      data,
-      createChallengeCard,
-      challengeContainer,
-      filterText,
-      filterByTypes,
-      filterByRating
-    );
+  // Add eventlistener for type input
+  typeInputs.forEach((input)=> {
+    input.addEventListener("click", async () => {
+        let selectedTags = tagParent.querySelectorAll(".active");
+        selectedTags = Array.from(selectedTags);
+        selectedTags = selectedTags.map((tag) => {
+          return tag.textContent;
+        });
+        let data = challenges;
+        data = await filterByTags(selectedTags, data);
+        filterAndUpdateCards(
+          data,
+          createChallengeCard,
+          challengeContainer,
+          filterText,
+          filterByTypes,
+          filterByRating
+        );
+      });
   });
 }
 
