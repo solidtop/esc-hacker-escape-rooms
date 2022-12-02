@@ -2,7 +2,7 @@ const path = require('path');
 
 
 module.exports = {
-    entry: './src/script.js',
+    entry: ['./src/script.js', './src/scriptChallenge.js'],
     mode: 'production',
     target: 'web',
     output: {

@@ -569,41 +569,140 @@ footer a:hover {
   align-content: center;
 }
 
-/*Test css*/
-.box {
-  background-color: #fff;
-  color: rgb(30, 93, 189);
-  width: 400px;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  border: 3px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+.our-challenges {
+  margin: 2em;
+}
+.our-challenges h2 {
+  margin: 1em;
+  text-align: center;
+}
+.our-challenges .button {
+  margin: auto;
+}
+
+.filter-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   display: none;
+  position: relative;
+  gap: 1em;
+  padding: 1em;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+}
+.filter-container h3 {
+  margin: 0;
+  grid-column: span 3;
+  opacity: 0;
+}
+.filter-container h4 {
+  margin: 0.5em 0;
 }
 
 .show {
-  display: inline-block;
+  display: block;
+}
+@media (min-width: 1000px) {
+  .show {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.show.button {
+  display: none;
 }
 
-.btn {
-  background-color: rgb(255, 255, 255);
-  color: rgb(83, 83, 83);
-  border: 3px solid rgb(182, 192, 196);
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgb(120, 126, 134);
-  padding: 5px;
-  margin: 5px;
+.button-close {
+  position: absolute;
+  top: 0.1em;
+  right: 0.4em;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
   cursor: pointer;
 }
 
+.filter-by-type, .filter-by-rating, .filter-by-tags, .filter-by-search {
+  margin-top: 2em;
+}
+
+.filter-by-type, .filter-by-rating, .filter-by-tags {
+  grid-column: span 1;
+}
+
+.filter-by-type fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: flex;
+}
+.filter-by-type input {
+  cursor: pointer;
+}
+.filter-by-type label {
+  margin-left: 0.3em;
+}
+
+.filter-by-rating span {
+  text-align: left;
+  margin: 0 1em;
+}
+
+@media (min-width: 600px) {
+  .stars {
+    display: flex;
+  }
+}
+
+.starsFrom, .starsTo {
+  display: flex;
+  list-style: none;
+}
+
+.starDeactive {
+  content: url(/static/star-inactive.png);
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+.starDeactive.active {
+  content: url(/static/star-active.png);
+}
+.starDeactive:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.btn {
+  font-size: 0.8rem;
+  margin: 0.2em;
+  padding: 0.3em 0.5em;
+  background-color: transparent;
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 20px;
+  transition: border-radius 0.2s;
+}
+
 .btn.active {
-  background-color: rgb(67, 75, 82);
+  background-color: rgb(141, 141, 141);
   color: white;
+  outline: none;
 }
 
 .btn:hover {
-  background-color: rgb(56, 58, 66);
-  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-by-search {
+  grid-column: 2/3;
+}
+.filter-by-search input {
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }

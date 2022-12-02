@@ -1,5 +1,7 @@
-async function renderChallenges(data, filterFunction=function(data){return data}, createCardFunction, challengeContainer) {
-    let challenges = await data;
+import { listeners } from "./modal.js"
+
+ async function renderChallenges(data, filterFunction=function(data){return data}, createCardFunction, challengeContainer) {
+  let challenges = await data;
     challenges = await filterFunction(challenges);
     challenges.forEach((challenge) => {
       const card = createCardFunction(challenge);
@@ -22,7 +24,7 @@ async function renderChallenges(data, filterFunction=function(data){return data}
         challengeContainer.append(currentCard);
       });
     }
-   
+    listeners();
   }
 
   export {renderChallenges, filterAndUpdateCards}

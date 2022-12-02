@@ -189,3 +189,13 @@ function step3() {
 
     return div;
 }
+
+export function listeners() {
+    console.log('hej');
+    document.querySelectorAll('.challenge-item button').forEach(button => {
+        button.addEventListener('click', () => {
+          const challenge = JSON.parse(button.querySelector('input').value);
+          createModal(challenge);
+        }); 
+      });
+};
