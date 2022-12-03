@@ -1,10 +1,11 @@
 
 export function handleStarInput() {
-
-  const starsFrom = document.querySelectorAll(".starFrom");
-  const starsTo = document.querySelectorAll(".starTo");
+ 
+  const starsFrom = document.querySelectorAll(".starsFrom li");
+  const starsTo = document.querySelectorAll(".starsTo li");
   
   let activeIdx = null;
+  let activeIdx2 = null;
 
   starsFrom.forEach((starFrom, clickIdx) => {
     starFrom.addEventListener("click", (e) => {
@@ -28,12 +29,12 @@ export function handleStarInput() {
 
   starsTo.forEach((starTo, clickIdx) => {
     starTo.addEventListener("click", (e) => {
-      if (activeIdx === clickIdx) {
+      if (activeIdx2 === clickIdx) {
         e.target.classList.remove("active");
-        activeIdx = clickIdx - 1;
+        activeIdx2 = clickIdx - 1;
       } else {
         e.target.classList.add("active");
-        activeIdx = clickIdx;
+        activeIdx2 = clickIdx;
       }
 
       starsTo.forEach((otherStar, otherIdx) => {
