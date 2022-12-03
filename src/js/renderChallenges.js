@@ -5,6 +5,7 @@ import { listeners } from "./modal.js"
     challenges = await filterFunction(challenges);
     challenges.forEach((challenge) => {
       const card = createCardFunction(challenge);
+      console.log(card)
       challengeContainer.append(card);
     });
   }
@@ -15,6 +16,7 @@ import { listeners } from "./modal.js"
     challengeContainer.nextElementSibling.classList.add("hidden");
     filterFunctions.forEach((filter)=> {
       challenges = filter(challenges);
+      console.log(challenges)
     });
     if(challenges.length === 0) {
       challengeContainer.nextElementSibling.classList.remove("hidden");

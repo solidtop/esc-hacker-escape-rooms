@@ -1,4 +1,4 @@
-export default function handeFilterMenu() {
+export default function handelFilterMenu() {
    document.querySelector('#show-filters').addEventListener('click', () => {
         document.querySelector('.filter-container').classList.add('show');
         document.querySelector('#show-filters').classList.add('show');

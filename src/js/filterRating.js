@@ -1,51 +1,51 @@
 
 export function handleStarInput() {
  
-  const starsFrom = document.querySelectorAll(".starsFrom li");
-  const starsTo = document.querySelectorAll(".starsTo li");
+  // const starsFrom = document.querySelectorAll(".starsFrom li");
+  // const starsTo = document.querySelectorAll(".starsTo li");
   
-  let activeIdx = null;
-  let activeIdx2 = null;
+  // let activeIdx = null;
+  // let activeIdx2 = null;
 
-  starsFrom.forEach((starFrom, clickIdx) => {
-    starFrom.addEventListener("click", (e) => {
-      if (activeIdx === clickIdx) {
-        e.target.classList.remove("active");
-        activeIdx = clickIdx - 1;
-      } else {
-        e.target.classList.add("active");
-        activeIdx = clickIdx;
-      }
+  // starsFrom.forEach((starFrom, clickIdx) => {
+  //   starFrom.addEventListener("click", (e) => {
+  //     if (activeIdx === clickIdx) {
+  //       e.target.classList.remove("active");
+  //       activeIdx = clickIdx - 1;
+  //     } else {
+  //       e.target.classList.add("active");
+  //       activeIdx = clickIdx;
+  //     }
   
-      starsFrom.forEach((otherStar, otherIdx) => {
-        if (otherIdx < clickIdx) {
-          otherStar.classList.add("active");
-        } else if (otherIdx > clickIdx) {
-          otherStar.classList.remove("active");
-        }
-      });
-    });
-  });
+  //     starsFrom.forEach((otherStar, otherIdx) => {
+  //       if (otherIdx < clickIdx) {
+  //         otherStar.classList.add("active");
+  //       } else if (otherIdx > clickIdx) {
+  //         otherStar.classList.remove("active");
+  //       }
+  //     });
+  //   });
+  // });
 
-  starsTo.forEach((starTo, clickIdx) => {
-    starTo.addEventListener("click", (e) => {
-      if (activeIdx2 === clickIdx) {
-        e.target.classList.remove("active");
-        activeIdx2 = clickIdx - 1;
-      } else {
-        e.target.classList.add("active");
-        activeIdx2 = clickIdx;
-      }
+  // starsTo.forEach((starTo, clickIdx) => {
+  //   starTo.addEventListener("click", (e) => {
+  //     if (activeIdx2 === clickIdx) {
+  //       e.target.classList.remove("active");
+  //       activeIdx2 = clickIdx - 1;
+  //     } else {
+  //       e.target.classList.add("active");
+  //       activeIdx2 = clickIdx;
+  //     }
 
-      starsTo.forEach((otherStar, otherIdx) => {
-        if (otherIdx < clickIdx) {
-          otherStar.classList.add("active");
-        } else if (otherIdx > clickIdx) {
-          otherStar.classList.remove("active");
-        }
-      });
-    });
-  });
+  //     starsTo.forEach((otherStar, otherIdx) => {
+  //       if (otherIdx < clickIdx) {
+  //         otherStar.classList.add("active");
+  //       } else if (otherIdx > clickIdx) {
+  //         otherStar.classList.remove("active");
+  //       }
+  //     });
+  //   });
+  // });
 }
 
 export function filterByRating(data){

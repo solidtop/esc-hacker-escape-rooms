@@ -7,7 +7,7 @@ import { getTags, displayTags, filterByTags } from "./js/tagFilter.js";
 import filterText from "./js/filterText.js";
 import { handleStarInput, filterByRating } from "./js/filterRating.js";
 import { listeners } from "./js/modal.js";
-import handeFilterMenu from "./js/filterMenu.js";
+import handelFilterMenu from "./js/filterMenu.js";
 
 const challengeContainer = document.querySelector(".challenge-list");
 const textFilter = document.querySelector("#text-filter");
@@ -61,9 +61,8 @@ async function run() {
         challengeContainer,
         filterText,
         filterByTypes,
-        filterByRating
+        //filterByRating
       );
-      //listeners();
     });
   });
   
@@ -90,9 +89,8 @@ async function run() {
         challengeContainer,
         filterText,
         filterByTypes,
-        filterByRating
+        //filterByRating
       ); 
-      //listeners();
     });
   });
 
@@ -112,9 +110,8 @@ async function run() {
       challengeContainer,
       filterText,
       filterByTypes,
-      filterByRating
+      //filterByRating
     );
-    //listeners();
   });
 
   // Add eventlistener for type input
@@ -133,13 +130,12 @@ async function run() {
         challengeContainer,
         filterText,
         filterByTypes,
-        filterByRating
+        //filterByRating
       );
-      //listeners();
     });
   });
 }
 
 run();
 
-handeFilterMenu();
+handelFilterMenu();
