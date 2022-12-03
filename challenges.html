@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="src/js/filterByTypeOnLoad.js"></script>
-    <script type="module" src="src/js/tag-filter.js"></script>
+    <script type="module" src="src/scriptChallenge.js"></script>
     <link rel="stylesheet" type="text/css" href="static/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>[ESC] Our challenges</title>
@@ -57,7 +56,6 @@
 
         <div class="filter-by-rating">
           <h4>By rating</h4>
-
           <div class="stars">
             <ul
               role="meter"
@@ -104,6 +102,7 @@
 
     <section class="challenges">
       <ul class="challenge-list grid"></ul>
+      <p class="no-matching-challenges hidden">No matching challenges</p>
     </section>
 
     <footer>
@@ -135,5 +134,6 @@
       </nav>
     </footer>
     <script src="bundle.js"></script>
+    <script type="module" src="src/script.js"></script>
   </body>
 </html>

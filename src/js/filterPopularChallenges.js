@@ -1,4 +1,5 @@
-export default function filterPopularChallenges(data) {
+export default async function filterPopularChallenges(loadData) {
+  let data = await loadData;
     const filteredData = data.sort(function (a, b) {
       return b["rating"] - a["rating"];
     });
