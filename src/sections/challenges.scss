@@ -13,12 +13,21 @@
     overflow-x: scroll;
 }
 
-.grid {
-    flex-wrap: wrap;
+@media (min-width: $bp-large) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 400px);
+        justify-content: center;
+        padding: 1em;
+        gap: 2em;
+
+        .challenge-item {
+            margin: 0;
+        }
+    }
 }
 
 .challenge-item {
-    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-width: 360px;
