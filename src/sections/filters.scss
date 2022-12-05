@@ -98,7 +98,7 @@
     gap: 0.6em;
   }
   .rating-star {
-    content: url(/static/star-inactive.png);
+    content: url(star-inactive.png);
     width: 20px;
     height: 20px;
     margin: 5px;
@@ -109,12 +109,12 @@
     list-style-type: none;
     width: 23px;
     height: 26px;
-    content: url(/static/star-inactive.png);
+    content: url(star-inactive.png);
     background-size: contain;
     background-repeat: no-repeat;
   }
   .rating-star.active {
-    content: url(/static/star-active.png); 
+   content: url(star-active.png); 
   }
   
   @media (min-width: 600px) {
