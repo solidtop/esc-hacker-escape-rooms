@@ -6,11 +6,21 @@ export function createModal(challenge) {
     container.classList.add("modal-container");
     document.body.appendChild(container);
     renderContent(step1(challenge));
+    
+    document.body.addEventListener("click", closeOnInput);
 
     return container;
 }
 
+ function closeOnInput(e) {
+    if (e.target.classList.contains("modal-container") && !e.target.classList.contains("button")) {
+        removeModal();
+    }
+ }
+
 export function removeModal() {
+    document.body.removeEventListener('click', closeOnInput);
+
     document.querySelector(".modal-container").remove();
 }
 
@@ -167,7 +177,7 @@ async function step2(challenge, times) {
                 requestedParticipants
             );
             renderContent(step3());
-        }
+        }6
     });
 
     return form;
@@ -198,3 +208,6 @@ export function listeners() {
         }); 
       });
 };
+
+
+

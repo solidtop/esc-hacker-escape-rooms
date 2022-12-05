@@ -19,7 +19,6 @@ async function renderChallenges(queryParams, container, data, filterFunction, re
 
   if(type === "online") {
     challenges = filterFunction(challenges, "online");
-    console.log(challenges)
   }
   else if(type === "onsite") {
     challenges = filterFunction(challenges, "onsite");

@@ -681,13 +681,13 @@ footer a:hover {
   list-style-type: none;
   width: 23px;
   height: 26px;
-  content: url(star-inactive.png);
+  content: url(/static/star-inactive.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .rating-star.active {
-  content: url(star-active.png);
+  content: url(/static/star-active.png);
 }
 
 @media (min-width: 600px) {

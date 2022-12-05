@@ -8,6 +8,7 @@ import filterText from "./js/filterText.js";
 import { handleStarInput, filterByRating } from "./js/filterRating.js";
 import { listeners } from "./js/modal.js";
 import handeFilterMenu from "./js/filterMenu.js";
+import { removeModal } from "./js/modal.js";
 
 const challengeContainer = document.querySelector(".challenge-list");
 const textFilter = document.querySelector("#text-filter");
