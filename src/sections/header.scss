@@ -3,6 +3,11 @@ header {
     color: white;
     padding: 1em;
 
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
     h1 {
         margin: 0;
         padding: 0 0 0 130px;
@@ -13,6 +18,9 @@ header {
         background-image: url('logo.png');
         background-size: 120px auto;
         background-repeat: no-repeat;
+
+        
+        
 
         @media (min-width: $bp-medium) {
             width: auto;

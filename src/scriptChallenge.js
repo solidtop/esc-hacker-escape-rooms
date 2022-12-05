@@ -52,7 +52,7 @@ async function run() {
       selectedTags = selectedTags.map((tag) => {
         return tag.textContent;
       });
-      console.log(selectedTags);
+      
       let data = challenges;
       data = await filterByTags(selectedTags, data);
       await filterAndUpdateCards(
@@ -63,7 +63,6 @@ async function run() {
         filterByTypes,
         filterByRating
       );
-      //listeners();
     });
   });
   
@@ -81,7 +80,6 @@ async function run() {
       selectedTags = selectedTags.map((tag) => {
         return tag.textContent;
       });
-      console.log(challenges)
       let data = challenges;
       data = filterByTags(selectedTags, data);
        filterAndUpdateCards(
@@ -92,7 +90,6 @@ async function run() {
         filterByTypes,
         filterByRating
       ); 
-      //listeners();
     });
   });
 
@@ -114,7 +111,6 @@ async function run() {
       filterByTypes,
       filterByRating
     );
-    //listeners();
   });
 
   // Add eventlistener for type input
@@ -135,7 +131,6 @@ async function run() {
         filterByTypes,
         filterByRating
       );
-      //listeners();
     });
   });
 }

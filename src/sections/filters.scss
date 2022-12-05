@@ -89,32 +89,41 @@
     }
 }
 
-.stars {
-    @media (min-width: $bp-medium) {
-        display: flex;
-    }
-}
-
 .starsFrom, .starsTo {
     display: flex;
     list-style: none;
-}
-
-.starDeactive {
+  }
+  .rating {
+    display: flex;
+    gap: 0.6em;
+  }
+  .rating-star {
     content: url(/static/star-inactive.png);
     width: 20px;
     height: 20px;
     margin: 5px;
-
-    &.active {
-        content: url(/static/star-active.png);
+  
+  }
+  
+  .rating .rating-star {
+    list-style-type: none;
+    width: 23px;
+    height: 26px;
+    content: url(star-inactive.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .rating-star.active {
+    content: url(star-active.png); 
+  }
+  
+  @media (min-width: 600px) {
+    .stars {
+      display: flex;
     }
+  }
 
-    &:hover {
-        opacity: 50%;
-        cursor: pointer;
-    }
-}
+
 
 //Tag buttons
 .btn {
