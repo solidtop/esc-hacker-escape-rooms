@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = {
+/*module.exports = {
   entry: "./src/scriptChallenge.js",
   mode: "production",
   target: "web",
@@ -13,9 +13,9 @@ module.exports = {
     path: path.resolve(__dirname),
     filename: "challenge.js",
   },
-};
+};*/
 
-/*module.exports = {
+module.exports = {
     entry: "./src/script.js",
     mode: "production",
     target: "web",
@@ -28,4 +28,4 @@ module.exports = {
       path: path.resolve(__dirname),
       filename: "index.js",
     },
-  };*/
+  };
