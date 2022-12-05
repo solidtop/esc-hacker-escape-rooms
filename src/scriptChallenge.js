@@ -19,7 +19,7 @@ const onsiteTypeInput = document.querySelector(
 );
 const typeInputs = [onlineTypeInput, onsiteTypeInput];
 const tagParent = document.querySelector("#btn-container");
-const ratingStars = document.querySelectorAll(".starDeactive");
+const ratingStars = document.querySelectorAll(".rating-star");
 
 async function run() {
   const challenges = await loadData();
@@ -47,7 +47,7 @@ async function run() {
 
   ratingStars.forEach((star) => {
     star.addEventListener("click", async () => {
-      let selectedTags = ratingStars.querySelectorAll(".active");
+      let selectedTags = tagParent.querySelectorAll(".active");
       selectedTags = Array.from(selectedTags);
       selectedTags = selectedTags.map((tag) => {
         return tag.textContent;

@@ -40,22 +40,46 @@ li {
   background-color: #8ACFE5;
   color: #011827;
 }
-
+.starsFrom, .starsTo {
+  display: flex;
+  list-style: none;
+}
 .rating {
   display: flex;
   gap: 0.6em;
 }
+.rating-star {
+  content: url(/static/star-inactive.png);
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+
+}
+
 .rating .rating-star {
   list-style-type: none;
   width: 23px;
   height: 26px;
-  background-image: url(star-inactive.png);
+  content: url(star-inactive.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
-.rating .rating-star.active {
-  background-image: url(star-active.png);
+.rating-star.active {
+  content: url(star-active.png); 
 }
+
+@media (min-width: 600px) {
+  .stars {
+    display: flex;
+  }
+}
+
+ /*
+.rating-star:hover {
+  opacity: 50%;
+  cursor: pointer;
+}*/
+
 
 header {
   background-color: #011827;
@@ -340,6 +364,7 @@ header h1 {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
+
 .challenge-item .challenge-title,
 .challenge-item .challenge-description,
 .challenge-item .rating,
@@ -656,30 +681,6 @@ footer a:hover {
   margin: 0 1em;
 }
 
-@media (min-width: 600px) {
-  .stars {
-    display: flex;
-  }
-}
-
-.starsFrom, .starsTo {
-  display: flex;
-  list-style: none;
-}
-
-.starDeactive {
-  content: url(/static/star-inactive.png);
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-}
-.starDeactive.active {
-  content: url(/static/star-active.png);
-}
-.starDeactive:hover {
-  opacity: 50%;
-  cursor: pointer;
-}
 
 .btn {
   font-size: 0.8rem;
