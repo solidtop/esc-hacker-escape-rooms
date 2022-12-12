@@ -11,7 +11,7 @@
 .challenge-list {
     display: flex;
     overflow-x: scroll;
-    padding: 1em;
+    padding: 1.5em 0;
 }
 
 @media (min-width: $bp-large) {
@@ -19,7 +19,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, 400px);
         justify-content: center;
-        padding: 2em;
+        padding: 2.5em 1em;
         gap: 2em;
 
         .challenge-item {
