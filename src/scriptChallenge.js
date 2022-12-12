@@ -9,6 +9,7 @@ import { handleStarInput, filterByRating } from "./js/filterRating.js";
 import { listeners } from "./js/modal.js";
 import handeFilterMenu from "./js/filterMenu.js";
 import { removeModal } from "./js/modal.js";
+import { sortCards } from "./js/sortBy.js";
 
 const challengeContainer = document.querySelector(".challenge-list");
 const textFilter = document.querySelector("#text-filter");
@@ -33,6 +34,8 @@ async function run() {
     createChallengeCard
   );
   listeners();
+
+  sortCards();
 
   if (queryParams === "online") {
     onlineTypeInput.setAttribute("checked", "true");
