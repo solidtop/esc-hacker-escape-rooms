@@ -57,7 +57,7 @@
     cursor: pointer;
 }
 
-.filter-by-type, .filter-by-rating, .filter-by-tags, .filter-by-search {
+.filter-by-type, .filter-by-rating, .filter-by-tags, .filter-by-search, .sort-by {
     margin-top: 2em;
 }
 
@@ -147,6 +147,11 @@
 .btn:hover {
     border-radius: 5px;
     cursor: pointer;
+}
+
+.sort-by {
+    grid-column: 2 / 3;
+    margin-bottom: 2em;
 }
 
 .filter-by-search {
