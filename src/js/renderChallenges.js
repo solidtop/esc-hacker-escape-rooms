@@ -10,6 +10,10 @@ import { listeners } from "./modal.js"
   }
 
   async function filterAndUpdateCards(data, renderFunction, challengeContainer, ...filterFunctions) {
+    const sortByInputs = document.querySelectorAll("input[name='sort-by']");
+    sortByInputs.forEach((input) => {
+      input.checked = false;
+    });
     let challenges = await data;
     challengeContainer.innerHTML = "";
     challengeContainer.nextElementSibling.classList.add("hidden");
