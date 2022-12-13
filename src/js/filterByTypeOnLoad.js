@@ -6,22 +6,33 @@ function filterByTypeOnLoad(data, type) {
 }
 
 function getQueryParams() {
+  const queryParams = {};
   const params = window.location.search;
   const paramSearch = new URLSearchParams(params);
-  const type = paramSearch.get("type");
-  
-  return type;
+  queryParams.type = paramSearch.get("type");
+  queryParams.minRating = paramSearch.get("min-rating");
+  queryParams.maxRating = paramSearch.get("max-rating");
+  queryParams.text = paramSearch.get("text");
+  queryParams.tags = paramSearch.get("tags");
+  if(queryParams.tags != null) {
+    queryParams.tags = queryParams.tags.split(",");
+  }
+  return queryParams;
 }
 
 async function renderChallenges(queryParams, container, data, filterFunction, renderFunction) {
-  const type =  queryParams;
+  const params =  queryParams;
   let challenges = data;
 
-  if(type === "online") {
+  if(params.type === "online") {
     challenges = filterFunction(challenges, "online");
   }
-  else if(type === "onsite") {
+  else if(params.type === "onsite") {
     challenges = filterFunction(challenges, "onsite");
+  }
+  if(params.minRating != null && params.minRating > 0 && params.minRating < 5) {
+    const starsFrom = document.querySelectorAll(".starsFrom li");
+    starsFrom[parseInt(params.minRating)-1].click();
   }
   challenges.forEach((challenge) => {
     const card = renderFunction(challenge);

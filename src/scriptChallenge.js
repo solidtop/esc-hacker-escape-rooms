@@ -25,18 +25,10 @@ const ratingStars = document.querySelectorAll(".rating-star");
 async function run() {
   const challenges = await loadData();
   const queryParams = getQueryParams();
-  await renderChallenges(
-    queryParams,
-    challengeContainer,
-    challenges,
-    filterByTypeOnLoad,
-    createChallengeCard
-  );
-  listeners();
 
-  if (queryParams === "online") {
+  if (queryParams.type === "online") {
     onlineTypeInput.setAttribute("checked", "true");
-  } else if (queryParams === "onsite") {
+  } else if (queryParams.type === "onsite") {
     onsiteTypeInput.setAttribute("checked", "true");
   } else {
     onlineTypeInput.setAttribute("checked", "true");
@@ -134,6 +126,14 @@ async function run() {
       );
     });
   });
+  await renderChallenges(
+    queryParams,
+    challengeContainer,
+    challenges,
+    filterByTypeOnLoad,
+    createChallengeCard
+  );
+  listeners();
 }
 
 run();
