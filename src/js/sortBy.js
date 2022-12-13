@@ -20,7 +20,7 @@ export function sortCards() {
       // Sort by rating
       if(sortByRating) {
         cards.sort(function (a, b) {
-            return b.childNodes[3].ariaValueNow - a.childNodes[3].ariaValueNow;
+            return b.childNodes[3].getAttribute("aria-valuenow") - a.childNodes[3].getAttribute("aria-valuenow");
           });
       } 
       
