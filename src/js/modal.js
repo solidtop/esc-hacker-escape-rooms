@@ -126,19 +126,14 @@ async function step2(challenge, times) {
     labelParticipants.for = "select-participants";
     form.appendChild(labelParticipants);
 
-    const selectParticipants = document.createElement("select");
-    selectParticipants.classList.add("select-participants");
-    const opt = document.createElement("option");
-    opt.textContent = "-- Select number --";
-    selectParticipants.appendChild(opt);
-    form.appendChild(selectParticipants);
-
-    let amountOfOptions = challenge.maxParticipants - challenge.minParticipants;
-    for (let i = 0; i <= amountOfOptions; i++) {
-        const option = document.createElement("option");
-        option.textContent = `${challenge.minParticipants + i} participants`;
-        selectParticipants.appendChild(option);
-    }
+    const inputParticipants = document.createElement("input");
+    inputParticipants.classList.add("select-participants");
+    inputParticipants.type = 'number';
+    inputParticipants.min = challenge.minParticipants;
+    inputParticipants.max = challenge.maxParticipants;
+    inputParticipants.value = challenge.minParticipants;
+    inputParticipants.required = true;
+    form.appendChild(inputParticipants);
 
     const button = document.createElement("button");
     button.type = "submit";
@@ -177,7 +172,7 @@ async function step2(challenge, times) {
                 requestedParticipants
             );
             renderContent(step3());
-        }6
+        }
     });
 
     return form;
