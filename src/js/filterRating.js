@@ -16,7 +16,6 @@ export function handleStarInput() {
         e.target.classList.add("active");
         activeIdx = clickIdx;
       }
-  
       starsFrom.forEach((otherStar, otherIdx) => {
         if (otherIdx < clickIdx) {
           otherStar.classList.add("active");
@@ -24,6 +23,16 @@ export function handleStarInput() {
           otherStar.classList.remove("active");
         }
       });
+      if (activeIdx > activeIdx2) {
+        starsTo.forEach((starTo, idx) => {
+          if (idx <= activeIdx) {
+            starTo.classList.add("active");
+          } else {
+            starTo.classList.remove("active");
+          }
+        });
+        activeIdx2 = activeIdx;
+      }
     });
   });
 
@@ -36,7 +45,6 @@ export function handleStarInput() {
         e.target.classList.add("active");
         activeIdx2 = clickIdx;
       }
-
       starsTo.forEach((otherStar, otherIdx) => {
         if (otherIdx < clickIdx) {
           otherStar.classList.add("active");
@@ -44,6 +52,16 @@ export function handleStarInput() {
           otherStar.classList.remove("active");
         }
       });
+      if (activeIdx > activeIdx2) {
+        starsTo.forEach((starTo, idx) => {
+          if (idx <= activeIdx) {
+            starTo.classList.add("active");
+          } else {
+            starTo.classList.remove("active");
+          }
+        });
+        activeIdx2 = activeIdx;
+      }
     });
   });
 }
@@ -55,4 +73,3 @@ export function filterByRating(data){
     return challenge.rating >= valueFrom.length && challenge.rating <= valueTo.length
   });
 }
-
