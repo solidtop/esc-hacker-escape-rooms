@@ -5,11 +5,11 @@ export function handleStarInput() {
   const starsTo = document.querySelectorAll(".starsTo li");
   
   let activeIdx = null;
-  let activeIdx2 = null;
+  let activeIdx2 = 5;
 
   starsFrom.forEach((starFrom, clickIdx) => {
     starFrom.addEventListener("click", (e) => {
-      if (activeIdx === clickIdx) {
+    if (activeIdx === clickIdx ) {
         e.target.classList.remove("active");
         activeIdx = clickIdx - 1;
       } else {
@@ -24,18 +24,14 @@ export function handleStarInput() {
         }
       });
       if (activeIdx > activeIdx2) {
-        starsTo.forEach((starTo, idx) => {
-          if (idx <= activeIdx) {
+        starsTo.forEach((starTo, clickIdx) => {
+          if (clickIdx <= activeIdx) {
             starTo.classList.add("active");
-          } else {
-            starTo.classList.remove("active");
-          }
-        });
-        activeIdx2 = activeIdx;
+          } 
+        });   
       }
     });
-  });
-
+  }); 
   starsTo.forEach((starTo, clickIdx) => {
     starTo.addEventListener("click", (e) => {
       if (activeIdx2 === clickIdx) {
@@ -53,19 +49,17 @@ export function handleStarInput() {
         }
       });
       if (activeIdx > activeIdx2) {
-        starsTo.forEach((starTo, idx) => {
-          if (idx <= activeIdx) {
+        starsTo.forEach((starTo, clickIdx) => {
+          if (clickIdx <= activeIdx) {
             starTo.classList.add("active");
           } else {
             starTo.classList.remove("active");
           }
         });
-        activeIdx2 = activeIdx;
       }
     });
   });
 }
-
 export function filterByRating(data){
   const valueFrom = document.querySelectorAll('.starFrom.active');
   const valueTo = document.querySelectorAll('.starTo.active');
