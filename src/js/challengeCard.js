@@ -1,3 +1,5 @@
+import { showLoader, hideLoader } from "./loadIndicator.js";
+
 export default function createChallengeCard(challenge) {
    
     let icon, buttonText, typeTitle;
@@ -69,5 +71,8 @@ export default function createChallengeCard(challenge) {
     button.append(currentChallengeObject);
     item.appendChild(button);
 
+    showLoader(item);
+    image.onload = () => hideLoader(item);
+   
     return item;
 }
