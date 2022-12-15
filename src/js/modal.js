@@ -103,6 +103,16 @@ async function step2(challenge, times) {
     inputEmail.classList.add("input-email");
     form.appendChild(inputEmail);
 
+    const labelPhone = document.createElement("label");
+    labelPhone.textContent = "Phone number";
+    labelPhone.for = "input-phone";
+    form.appendChild(labelPhone);
+
+    const inputPhone = document.createElement("input");
+    inputPhone.type = "tel";
+    inputPhone.classList.add("input-phone");
+    form.appendChild(inputPhone);
+
     const labelTime = document.createElement("label");
     labelTime.textContent = "What time?";
     labelEmail.for = "select-time";
