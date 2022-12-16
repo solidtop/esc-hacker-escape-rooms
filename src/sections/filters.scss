@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .our-challenges {
     margin: 2em;
 
@@ -165,5 +167,9 @@
         border-radius: 5px;
 
     }
+}
+
+.share-filtered-link {
+    color: $blue;
 }
 
