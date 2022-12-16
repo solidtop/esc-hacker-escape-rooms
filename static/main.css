@@ -639,7 +639,7 @@ footer a:hover {
   cursor: pointer;
 }
 
-.filter-by-type, .filter-by-rating, .filter-by-tags, .filter-by-search {
+.filter-by-type, .filter-by-rating, .filter-by-tags, .filter-by-search, .sort-by {
   margin-top: 2em;
 }
 
@@ -722,6 +722,10 @@ footer a:hover {
   cursor: pointer;
 }
 
+.sort-by {
+  margin-top: 2em;
+}
+
 .filter-by-search {
   grid-column: 2/3;
 }
@@ -731,4 +735,22 @@ footer a:hover {
   outline: none;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+}
+
+.share-filtered-link {
+  display: block;
+  grid-column: span 3/span 3;
+  text-align: center;
+  font-size: medium;
+  font-weight: 600;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 2em 0;
+  cursor: pointer;
+}
+
+.share-filtered-link:hover {
+  opacity: 0.7;
 }
