@@ -46,8 +46,8 @@ function createURL() {
     })
   }
   
+  navigator.clipboard.writeText(url);
 
-  console.log(url)
 }
 
 render(filterBox);
