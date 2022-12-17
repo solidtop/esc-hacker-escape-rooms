@@ -5,20 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="static/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <title>[ESC] Our challenges</title>
-    <meta name="title" content="[ESC] Our challenges">
-    <meta name="description" content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://solidtop.github.io/esc-hacker-escape-rooms/challenges.html">
-    <meta property="og:title" content="[ESC] Our challenges">
-    <meta property="og:description" content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!">
-    <meta property="og:image" content="https://github.com/solidtop/esc-hacker-escape-rooms/blob/main/static/usp1.png?raw=true">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://solidtop.github.io/esc-hacker-escape-rooms/challenges.html">
-    <meta property="twitter:title" content="[ESC] Our challenges">
-    <meta property="twitter:description" content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!">
-    <meta property="twitter:image" content="https://github.com/solidtop/esc-hacker-escape-rooms/blob/main/static/usp1.png?raw=true">
+    <link rel="shortcut icon" href="static/icon_title.png" />
+    <meta name="title" content="[ESC] Our challenges" />
+    <meta
+      name="description"
+      content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://solidtop.github.io/esc-hacker-escape-rooms/challenges.html"
+    />
+    <meta property="og:title" content="[ESC] Our challenges" />
+    <meta
+      property="og:description"
+      content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!"
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/solidtop/esc-hacker-escape-rooms/blob/main/static/usp1.png?raw=true"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://solidtop.github.io/esc-hacker-escape-rooms/challenges.html"
+    />
+    <meta property="twitter:title" content="[ESC] Our challenges" />
+    <meta
+      property="twitter:description"
+      content="Challenge yourself! Book one of the challenges on Hacker Escape Room site. On-line or on-site - it is up to you!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://github.com/solidtop/esc-hacker-escape-rooms/blob/main/static/usp1.png?raw=true"
+    />
   </head>
 
   <body>
@@ -29,8 +54,12 @@
     <nav class="main-nav">
       <button class="main-nav-toggle"></button>
       <menu class="main-menu">
-        <li class="main-menu-item"><a href="challenges.html?type=online">Play online</a></li>
-        <li class="main-menu-item"><a href="challenges.html?type=onsite">Play on-site</a></li>
+        <li class="main-menu-item">
+          <a href="challenges.html?type=online">Play online</a>
+        </li>
+        <li class="main-menu-item">
+          <a href="challenges.html?type=onsite">Play on-site</a>
+        </li>
         <li class="main-menu-item"><a href="">The story</a></li>
         <li class="main-menu-item"><a href="">Contact us </a></li>
       </menu>
@@ -38,29 +67,25 @@
 
     <section class="our-challenges">
       <h2>Our challenges</h2>
-      <button class="button primary" id="show-filters">Filter challenges</button>
-      
+      <button class="button primary" id="show-filters">
+        Filter challenges
+      </button>
+
       <menu class="filter-container">
         <h3>Filter challenges</h3>
-        <button class="button-close" id="hide-filters"><i class="fa-solid fa-xmark"></i></button>
+        <button class="button-close" id="hide-filters">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
         <div class="filter-by-type">
           <h4>By type</h4>
           <fieldset>
-            <input
-              type="checkbox"
-              value="online"
-              name="online-challenge"
-            />
+            <input type="checkbox" value="online" name="online-challenge" />
             <label for="online-challenge">Include online challenges</label>
           </fieldset>
-          
+
           <fieldset>
-            <input
-              type="checkbox"
-              value="onsite"
-              name="on-site-challenge"
-            />
+            <input type="checkbox" value="onsite" name="on-site-challenge" />
             <label for="on-site-challenge">Include on-site challenges</label>
           </fieldset>
         </div>
@@ -106,14 +131,30 @@
 
         <div class="filter-by-search">
           <h4>Or type to search for keyword</h4>
-          <input type="text" id="text-filter" placeholder="Start typing to filter" />
+          <input
+            type="text"
+            id="text-filter"
+            placeholder="Start typing to filter"
+          />
         </div>
         <div class="sort-by">
           <h4>Sort by</h4>
           <label for="sort-by-rating">Rating</label>
-          <input autocomplete="off" type="radio" name="sort-by" id="sort-by-rating" value="rating">
+          <input
+            autocomplete="off"
+            type="radio"
+            name="sort-by"
+            id="sort-by-rating"
+            value="rating"
+          />
           <label for="sort-by-name">Name</label>
-          <input autocomplete="off" type="radio" name="sort-by" id="sort-by-name" value="name">
+          <input
+            autocomplete="off"
+            type="radio"
+            name="sort-by"
+            id="sort-by-name"
+            value="name"
+          />
         </div>
       </menu>
     </section>
