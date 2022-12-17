@@ -772,7 +772,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #021928;
+  background-color: #8ACFE5;
 }
 
 .container {
@@ -932,7 +932,7 @@ html{
     margin: 10px 0;
   }
 }
-=======
+
 .lds-ring {
   display: inline-block;
   position: absolute;
