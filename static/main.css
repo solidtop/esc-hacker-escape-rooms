@@ -38,7 +38,7 @@ li {
 }
 .button.secondary {
   background-color: #8ACFE5;
-  color: #011827;
+  color: #021928;
 }
 
 .rating {
@@ -58,7 +58,7 @@ li {
 }
 
 header {
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 1em;
 }
@@ -165,7 +165,7 @@ header h1 {
   }
   .main-nav.open .main-menu {
     z-index: 1;
-    background-color: #011827;
+    background-color: #021928;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,7 +205,7 @@ header h1 {
 @media (min-width: 600px) {
   .main-nav {
     display: block;
-    background-color: #011827;
+    background-color: #021928;
     padding-top: 2rem;
   }
   .main-menu {
@@ -366,7 +366,7 @@ header h1 {
   right: 0.5em;
   top: 0.5em;
   font-size: 40px;
-  color: #011827;
+  color: #021928;
 }
 .challenge-item .challenge-title {
   grid-column: span 2;
@@ -436,7 +436,7 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 3rem 1rem;
 }
@@ -494,7 +494,7 @@ header h1 {
 }
 
 footer {
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 1rem 1rem 3rem;
 }
