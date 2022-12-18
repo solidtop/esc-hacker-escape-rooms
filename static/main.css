@@ -320,7 +320,7 @@ header h1 {
 .challenge-list {
   display: flex;
   overflow-x: scroll;
-  padding: 1.5em 0;
+  padding: 1.5em 1.5em;
 }
 
 @media (min-width: 1000px) {
