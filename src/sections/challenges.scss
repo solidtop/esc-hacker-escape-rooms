@@ -19,12 +19,19 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, 400px);
         justify-content: center;
-        padding: 2.5em 1em;
+        padding: 2.5em 2em;
         gap: 2em;
 
         .challenge-item {
             margin: 0;
         }
+    }
+}
+
+@media (min-width: $bp-very-large) {
+    .grid {
+        overflow: visible;
+        grid-template-columns: repeat(4, 400px);
     }
 }
 
