@@ -90,6 +90,7 @@ async function step2(challenge, times) {
 
     const inputName = document.createElement("input");
     inputName.type = "text";
+    inputName.setAttribute("required","true");
     inputName.classList.add("input-name");
     form.appendChild(inputName);
 
@@ -100,8 +101,20 @@ async function step2(challenge, times) {
 
     const inputEmail = document.createElement("input");
     inputEmail.type = "email";
+    inputEmail.setAttribute("required","true");
     inputEmail.classList.add("input-email");
     form.appendChild(inputEmail);
+
+    const labelPhone = document.createElement("label");
+    labelPhone.textContent = "Phone number";
+    labelPhone.for = "input-phone";
+    form.appendChild(labelPhone);
+
+    const inputPhone = document.createElement("input");
+    inputPhone.type = "tel";
+    inputPhone.setAttribute("required","true");
+    inputPhone.classList.add("input-phone");
+    form.appendChild(inputPhone);
 
     const labelTime = document.createElement("label");
     labelTime.textContent = "What time?";
@@ -147,17 +160,21 @@ async function step2(challenge, times) {
 
         let requestedName = document.querySelector(".input-name").value;
         let requestedEmail = document.querySelector(".input-email").value;
+        let requestedPhone = document.querySelector(".input-phone").value;
         let requestedParticipants = document.querySelector(".select-participants").value;
         let requestedTime = document.querySelector(".select-time").value;
         let requestedDate = times.date;
         let challengeId = challenge.id;
         let matches = requestedParticipants.match(/(\d+)/);
+        let regex = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm;
+
+        if (!requestedPhone.match(regex)) {
+            alert('Wrongly putten phone number pleas try again.') 
+        }
 
         
 
-        if (requestedName === "" || requestedEmail === "") {
-            alert("Please fill in requested fields.");
-        } else if (requestedParticipants === "-- Select number --") {
+        if (requestedParticipants === "-- Select number --") {
             alert("Please select participants.");
         } else if (requestedTime === "-- Choose time --") {
             alert("Please choose time.");
@@ -167,6 +184,7 @@ async function step2(challenge, times) {
                 challengeId,
                 requestedName,
                 requestedEmail,
+                requestedPhone,
                 requestedDate,
                 requestedTime,
                 requestedParticipants
