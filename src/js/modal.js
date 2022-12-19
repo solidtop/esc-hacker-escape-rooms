@@ -166,6 +166,11 @@ async function step2(challenge, times) {
         let requestedDate = times.date;
         let challengeId = challenge.id;
         let matches = requestedParticipants.match(/(\d+)/);
+        let regex = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm;
+
+        if (!requestedPhone.match(regex)) {
+            alert('Wrongly putten phone number pleas try again.') 
+        }
 
         
 
