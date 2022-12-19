@@ -59,7 +59,13 @@ export default function createChallengeCard(challenge) {
     const description = document.createElement('p');
     description.classList.add('challenge-description');
     description.textContent = challenge.description;
-    item.appendChild(description);
+    if (description.textContent.length < 50) {
+        item.appendChild(description);
+    } else {
+        description.textContent = description.textContent.substring(0,50)+ '...';
+        item.appendChild(description);
+    }
+    
 
     const currentChallengeObject = document.createElement("input");
     currentChallengeObject.setAttribute("hidden", "true");
