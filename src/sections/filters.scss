@@ -182,9 +182,15 @@
 }
 
 .btn.active {
-    background-color: #021928;
+    background-color: rgb(141, 141, 141);
     color: white;
     outline: none;
+}
+
+@media (max-width:$bp-medium) {
+.btn.active {
+    background-color: #021928;
+}
 }
 
 .btn:hover {
