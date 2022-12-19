@@ -34,11 +34,14 @@
 
 .show {
     display: block;
+    
 
     @media (min-width: $bp-large) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+
+
 
     &.button {
        display: none;
@@ -63,6 +66,7 @@
 
 .filter-by-type, .filter-by-rating, .filter-by-tags {
     grid-column: span 1;
+   
 }
 
 .filter-by-type {
@@ -73,9 +77,41 @@
         display: flex;
     }
 
-    input {
-        cursor: pointer;
-    }
+    @media (max-width:$bp-medium) {
+        input {
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            border-radius: 25px;
+            background-color: #ccc;
+            transition: .3s;
+            outline: none;
+        }
+        input::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: rgb(255, 255, 255);
+            transition: left .3s;
+         }
+        :checked{
+            background-color: #021928;
+         }
+            :checked::after{
+            left: 70%;
+         }
+        }
+    
+        input {
+            cursor: pointer;
+        }
 
     label {
         margin-left: .3em;
@@ -123,6 +159,13 @@
     }
   }
 
+  @media (max-width:$bp-medium) {
+    .filter-by-tags {
+      .btn{
+            margin: 0.35em;
+      }
+    }
+    }
 
 
 //Tag buttons
@@ -139,7 +182,7 @@
 }
 
 .btn.active {
-    background-color: rgb(141, 141, 141);
+    background-color: #021928;
     color: white;
     outline: none;
 }
@@ -154,6 +197,37 @@
     margin-bottom: 2em;
 }
 
+@media (max-width:$bp-medium) {
+    .sort-by {
+        padding: 0;
+        margin-top: 2em;
+        border: none;
+        display: block;
+        input {
+            -webkit-appearance: none;
+            width: 50px;
+            height: 30px;
+            border-radius: 25px;
+            background-color: #ccc;
+            transition: .3s;
+            outline: none;
+            display: block;
+            
+        }
+        :checked{
+            background-color: #021928;
+        }
+    }
+}    
+        
+   
+
+
+
+
+
+
+
 .filter-by-search {
     grid-column: 2 / 3;
 
@@ -166,4 +240,5 @@
 
     }
 }
+
 
