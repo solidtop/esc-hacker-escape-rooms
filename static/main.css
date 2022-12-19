@@ -870,6 +870,8 @@ html{
   left: 50%;
   font-size: 25px;
   transform: translateX(-50%);
+  transform: translateY(60%);
+
 }
 .row-1 section .icon{
   top: 15px;
