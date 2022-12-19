@@ -11,7 +11,7 @@
 .challenge-list {
     display: flex;
     overflow-x: scroll;
-    padding: 1.5em 0;
+    padding: 1.5em 1.5em;
 }
 
 @media (min-width: $bp-large) {
@@ -19,12 +19,19 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, 400px);
         justify-content: center;
-        padding: 2.5em 1em;
+        padding: 2.5em 2em;
         gap: 2em;
 
         .challenge-item {
             margin: 0;
         }
+    }
+}
+
+@media (min-width: $bp-very-large) {
+    .grid {
+        overflow: visible;
+        grid-template-columns: repeat(4, 400px);
     }
 }
 
@@ -38,6 +45,7 @@
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     transition: box-shadow .3s;
     overflow: hidden;
+    animation: card-reveal .3s;
 
     &:hover {
         box-shadow: 0 0 2em rgba(0, 0, 0, 0.6);
@@ -84,6 +92,16 @@
         grid-column: 2 / 3;
         font-size: 0.7em;
         padding: 1em;
+    }
+}
+
+@keyframes card-reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
