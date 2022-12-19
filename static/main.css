@@ -38,7 +38,7 @@ li {
 }
 .button.secondary {
   background-color: #8ACFE5;
-  color: #011827;
+  color: #021928;
 }
 
 .rating {
@@ -58,7 +58,7 @@ li {
 }
 
 header {
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 1em;
 }
@@ -165,7 +165,7 @@ header h1 {
   }
   .main-nav.open .main-menu {
     z-index: 1;
-    background-color: #011827;
+    background-color: #021928;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,7 +205,7 @@ header h1 {
 @media (min-width: 600px) {
   .main-nav {
     display: block;
-    background-color: #011827;
+    background-color: #021928;
     padding-top: 2rem;
   }
   .main-menu {
@@ -320,7 +320,7 @@ header h1 {
 .challenge-list {
   display: flex;
   overflow-x: scroll;
-  padding: 1.5em 0;
+  padding: 1.5em 1.5em;
 }
 
 @media (min-width: 1000px) {
@@ -328,11 +328,17 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
     justify-content: center;
-    padding: 2.5em 1em;
+    padding: 2.5em 2em;
     gap: 2em;
   }
   .grid .challenge-item {
     margin: 0;
+  }
+}
+@media (min-width: 2000px) {
+  .grid {
+    overflow: visible;
+    grid-template-columns: repeat(4, 400px);
   }
 }
 .challenge-item {
@@ -366,7 +372,7 @@ header h1 {
   right: 0.5em;
   top: 0.5em;
   font-size: 40px;
-  color: #011827;
+  color: #021928;
 }
 .challenge-item .challenge-title {
   grid-column: span 2;
@@ -436,7 +442,7 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 3rem 1rem;
 }
@@ -494,7 +500,7 @@ header h1 {
 }
 
 footer {
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   padding: 1rem 1rem 3rem;
 }
@@ -662,6 +668,37 @@ footer a:hover {
   border: none;
   display: flex;
 }
+@media (max-width: 600px) {
+  .filter-by-type input {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: 0.3s;
+    outline: none;
+  }
+  .filter-by-type input::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.3s;
+  }
+  .filter-by-type :checked {
+    background-color: #021928;
+  }
+  .filter-by-type :checked::after {
+    left: 70%;
+  }
+}
 .filter-by-type input {
   cursor: pointer;
 }
@@ -709,6 +746,11 @@ footer a:hover {
     display: flex;
   }
 }
+@media (max-width: 600px) {
+  .filter-by-tags .btn {
+    margin: 0.35em;
+  }
+}
 .btn {
   font-size: 0.8rem;
   margin: 0.2em;
@@ -726,16 +768,41 @@ footer a:hover {
   outline: none;
 }
 
+@media (max-width: 600px) {
+  .btn.active {
+    background-color: #021928;
+  }
+}
 .btn:hover {
   border-radius: 5px;
   cursor: pointer;
 }
 
 .sort-by {
-  grid-column: 2/3;
-  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
+@media (max-width: 600px) {
+  .sort-by {
+    padding: 0;
+    margin-top: 2em;
+    border: none;
+    display: block;
+  }
+  .sort-by input {
+    -webkit-appearance: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: 0.3s;
+    outline: none;
+    display: block;
+  }
+  .sort-by :checked {
+    background-color: #021928;
+  }
+}
 .filter-by-search {
   grid-column: 2/3;
 }
@@ -747,28 +814,18 @@ footer a:hover {
   border-radius: 5px;
 }
 
-/*contact us styling*/
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-  
-}
-
-input[type=submit] {
-  background-color: #ffffff;
-  color: #021928;
-  padding: 12px 20px;
+.share-filtered-link {
+  display: block;
+  grid-column: span 3/span 3;
+  text-align: center;
+  font-size: medium;
+  font-weight: 600;
+  text-decoration: underline;
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
+  padding: 0;
+  margin: 2em 0;
   cursor: pointer;
-  font-weight: 900;
-  font-size: large;
 }
 
 input[type=submit]:hover {
@@ -933,6 +990,10 @@ html{
   .wrapper .row{
     margin: 10px 0;
   }
+ 
+.share-filtered-link:hover {
+  opacity: 0.7;
+ 
 }
 
 .lds-ring {
@@ -990,6 +1051,4 @@ html{
 .loading .button {
   visibility: hidden;
 }
-
-/*# sourceMappingURL=main.css.map */
 
