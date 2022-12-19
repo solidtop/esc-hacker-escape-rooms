@@ -828,9 +828,35 @@ footer a:hover {
   cursor: pointer;
 }
 
+
+/*contact us styling*/
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+input[type=submit] {
+  background-color: #ffffff;
+  color: #021928;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: large;
+}
+
 input[type=submit]:hover {
   background-color: #8ACFE5;
 }
+
 
 .container {
   border-radius: 5px;
