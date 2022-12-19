@@ -2,6 +2,7 @@ export default async function reserveTime(
     challengeId,
     requestedName,
     requestedEmail,
+    requestedPhone,
     requestedDate,
     requestedTime,
     requestedParticipants
@@ -17,6 +18,7 @@ export default async function reserveTime(
                 challenge: challengeId,
                 name: requestedName,
                 email: requestedEmail,
+                phone: requestedPhone,
                 date: requestedDate,
                 time: requestedTime,
                 participants: requestedParticipants,
