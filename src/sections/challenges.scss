@@ -11,7 +11,7 @@
 .challenge-list {
     display: flex;
     overflow-x: scroll;
-    padding: 1.5em 0;
+    padding: 1.5em 1.5em;
 }
 
 @media (min-width: $bp-large) {
@@ -19,12 +19,19 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, 400px);
         justify-content: center;
-        padding: 2.5em 1em;
+        padding: 2.5em 2em;
         gap: 2em;
 
         .challenge-item {
             margin: 0;
         }
+    }
+}
+
+@media (min-width: $bp-very-large) {
+    .grid {
+        overflow: visible;
+        grid-template-columns: repeat(4, 400px);
     }
 }
 
@@ -92,6 +99,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

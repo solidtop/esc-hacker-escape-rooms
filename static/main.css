@@ -320,7 +320,7 @@ header h1 {
 .challenge-list {
   display: flex;
   overflow-x: scroll;
-  padding: 1.5em 0;
+  padding: 1.5em 1.5em;
 }
 
 @media (min-width: 1000px) {
@@ -328,11 +328,17 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
     justify-content: center;
-    padding: 2.5em 1em;
+    padding: 2.5em 2em;
     gap: 2em;
   }
   .grid .challenge-item {
     margin: 0;
+  }
+}
+@media (min-width: 2000px) {
+  .grid {
+    overflow: visible;
+    grid-template-columns: repeat(4, 400px);
   }
 }
 .challenge-item {
