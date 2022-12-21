@@ -1078,3 +1078,12 @@ html{
   visibility: hidden;
 }
 }
+
+
+
+
+/*hover på alla knapper*/
+
+button:hover, button:focus, button:active,/*.main-menu-item a:hover,*/#show-filters:hover, #button-up:hover{
+  color: rgb(12, 82, 77);
+}
